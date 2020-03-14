@@ -1,11 +1,3 @@
-//
-//  GameScene.swift
-//  kimetsu
-//
-//  Created by ItoNaoya on 2020/03/14.
-//  Copyright © 2020 勇者かっぱ. All rights reserved.
-//
-
 import SpriteKit
 import GameplayKit
 
@@ -21,15 +13,13 @@ class GameScene: SKScene {
     override func sceneDidLoad() {
 
         self.lastUpdateTime = 0
-        
-        // Get label node from scene and store it for use later
+
         self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
         if let label = self.label {
             label.alpha = 0.0
             label.run(SKAction.fadeIn(withDuration: 2.0))
         }
         
-        // Create shape node to use during mouse interaction
         let w = (self.size.width + self.size.height) * 0.05
         self.spinnyNode = SKShapeNode.init(rectOf: CGSize.init(width: w, height: w), cornerRadius: w * 0.3)
         
@@ -90,17 +80,12 @@ class GameScene: SKScene {
     
     
     override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
-        
-        // Initialize _lastUpdateTime if it has not already been
         if (self.lastUpdateTime == 0) {
             self.lastUpdateTime = currentTime
         }
         
-        // Calculate time since last update
         let dt = currentTime - self.lastUpdateTime
         
-        // Update entities
         for entity in self.entities {
             entity.update(deltaTime: dt)
         }
