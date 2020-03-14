@@ -15,6 +15,8 @@
 		CE00A2EB241D002800A9DC08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE00A2E9241D002800A9DC08 /* Main.storyboard */; };
 		CE00A2ED241D002D00A9DC08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE00A2EC241D002D00A9DC08 /* Assets.xcassets */; };
 		CE00A2F0241D002D00A9DC08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE00A2EE241D002D00A9DC08 /* LaunchScreen.storyboard */; };
+		CE00A301241D272100A9DC08 /* TitleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00A300241D272100A9DC08 /* TitleScene.swift */; };
+		CE00A303241D292100A9DC08 /* TitleScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = CE00A302241D292100A9DC08 /* TitleScene.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		CE00A2EC241D002D00A9DC08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE00A2EF241D002D00A9DC08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE00A2F1241D002D00A9DC08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE00A300241D272100A9DC08 /* TitleScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScene.swift; sourceTree = "<group>"; };
+		CE00A302241D292100A9DC08 /* TitleScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TitleScene.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				CE00A2E1241D002800A9DC08 /* GameScene.sks */,
+				CE00A302241D292100A9DC08 /* TitleScene.sks */,
 				CE00A2E3241D002800A9DC08 /* Actions.sks */,
 			);
 			path = skss;
@@ -85,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				CE00A2E5241D002800A9DC08 /* GameScene.swift */,
+				CE00A300241D272100A9DC08 /* TitleScene.swift */,
 			);
 			path = scenes;
 			sourceTree = "<group>";
@@ -152,6 +158,7 @@
 				CE00A2ED241D002D00A9DC08 /* Assets.xcassets in Resources */,
 				CE00A2F0241D002D00A9DC08 /* LaunchScreen.storyboard in Resources */,
 				CE00A2E4241D002800A9DC08 /* Actions.sks in Resources */,
+				CE00A303241D292100A9DC08 /* TitleScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +172,7 @@
 				CE00A2E6241D002800A9DC08 /* GameScene.swift in Sources */,
 				CE00A2E8241D002800A9DC08 /* GameViewController.swift in Sources */,
 				CE00A2E0241D002800A9DC08 /* AppDelegate.swift in Sources */,
+				CE00A301241D272100A9DC08 /* TitleScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

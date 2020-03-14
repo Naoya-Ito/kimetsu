@@ -7,9 +7,9 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let scene = GKScene(fileNamed: "GameScene") {
+        if let scene = GKScene(fileNamed: "TitleScene") {
             
-            if let sceneNode = scene.rootNode as! GameScene? {
+            if let sceneNode = scene.rootNode as! TitleScene? {
                 
                 sceneNode.entities = scene.entities
                 sceneNode.graphs = scene.graphs
