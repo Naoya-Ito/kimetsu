@@ -89,8 +89,8 @@
 		CE00A2FF241D245000A9DC08 /* scenes */ = {
 			isa = PBXGroup;
 			children = (
-				CE00A2E5241D002800A9DC08 /* GameScene.swift */,
 				CE00A300241D272100A9DC08 /* TitleScene.swift */,
+				CE00A2E5241D002800A9DC08 /* GameScene.swift */,
 			);
 			path = scenes;
 			sourceTree = "<group>";

@@ -10,12 +10,9 @@ class GameViewController: UIViewController {
         if let scene = GKScene(fileNamed: "TitleScene") {
             
             if let sceneNode = scene.rootNode as! TitleScene? {
-                
                 sceneNode.entities = scene.entities
                 sceneNode.graphs = scene.graphs
-                
                 sceneNode.scaleMode = .aspectFill
-                
                 if let view = self.view as! SKView? {
                     view.presentScene(sceneNode)
                     

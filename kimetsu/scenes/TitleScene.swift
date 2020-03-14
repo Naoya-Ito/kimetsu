@@ -1,3 +1,4 @@
+// タイトル画面
 import SpriteKit
 import GameplayKit
 
@@ -7,46 +8,49 @@ class TitleScene: SKScene {
     var graphs = [String : GKGraph]()
     
     private var lastUpdateTime : TimeInterval = 0
-    private var spinnyNode : SKShapeNode?
-    
     override func sceneDidLoad() {
 
         self.lastUpdateTime = 0
-
-        let w = (self.size.width + self.size.height) * 0.05
-        self.spinnyNode = SKShapeNode.init(rectOf: CGSize.init(width: w, height: w), cornerRadius: w * 0.3)
-        
-        if let spinnyNode = self.spinnyNode {
-            spinnyNode.lineWidth = 2.5
-            
-            spinnyNode.run(SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 1)))
-            spinnyNode.run(SKAction.sequence([SKAction.wait(forDuration: 0.5),
-                                              SKAction.fadeOut(withDuration: 0.5),
-                                              SKAction.removeFromParent()]))
-        }
     }
     
-    func touchDown(atPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.green
-            self.addChild(n)
+    /**************************************************************************/
+    /************************ 遷移             *****************************************/
+    /**************************************************************************/
+    public var onceFlag = false
+    private func goGame(){
+        if onceFlag {
+            return
         }
+        onceFlag = true
+
+        let nextScene = GameScene(fileNamed: "GameScene")!
+        nextScene.size = self.scene!.size
+        nextScene.scaleMode = SKSceneScaleMode.aspectFit
+        view!.presentScene(nextScene, transition: .doorway(withDuration: 1.3))
+    }
+    
+    /**************************************************************************/
+    /************************ touch   *****************************************/
+    /**************************************************************************/
+    
+    func touchDown(atPoint pos : CGPoint) {
     }
     
     func touchMoved(toPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.blue
-            self.addChild(n)
-        }
     }
     
     func touchUp(atPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.red
-            self.addChild(n)
+        let tapNodes = self.nodes(at: pos)
+        for tapNode in tapNodes {
+            if let name = tapNode.name {
+                switch name {
+                case "start_button":
+                    goGame()
+                    return
+                default:
+                    break
+                }
+            }
         }
     }
     
