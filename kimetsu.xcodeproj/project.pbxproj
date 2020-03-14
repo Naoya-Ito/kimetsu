@@ -61,9 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				CE00A2DF241D002800A9DC08 /* AppDelegate.swift */,
-				CE00A2E1241D002800A9DC08 /* GameScene.sks */,
-				CE00A2E3241D002800A9DC08 /* Actions.sks */,
-				CE00A2E5241D002800A9DC08 /* GameScene.swift */,
+				CE00A2FE241D243500A9DC08 /* skss */,
+				CE00A2FF241D245000A9DC08 /* scenes */,
 				CE00A2E7241D002800A9DC08 /* GameViewController.swift */,
 				CE00A2E9241D002800A9DC08 /* Main.storyboard */,
 				CE00A2EC241D002D00A9DC08 /* Assets.xcassets */,
@@ -71,6 +70,23 @@
 				CE00A2F1241D002D00A9DC08 /* Info.plist */,
 			);
 			path = kimetsu;
+			sourceTree = "<group>";
+		};
+		CE00A2FE241D243500A9DC08 /* skss */ = {
+			isa = PBXGroup;
+			children = (
+				CE00A2E1241D002800A9DC08 /* GameScene.sks */,
+				CE00A2E3241D002800A9DC08 /* Actions.sks */,
+			);
+			path = skss;
+			sourceTree = "<group>";
+		};
+		CE00A2FF241D245000A9DC08 /* scenes */ = {
+			isa = PBXGroup;
+			children = (
+				CE00A2E5241D002800A9DC08 /* GameScene.swift */,
+			);
+			path = scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
