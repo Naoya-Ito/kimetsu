@@ -10,13 +10,13 @@ class GameScene: BaseScene {
     
     override func sceneDidLoad() {
         commonSceneDidLoad()
+        kappa = self.childNode(withName: "//kappa") as! KappaNode
     }
 
     override func didMove(to view: SKView) {
-        kappa = self.childNode(withName: "//kappa") as! KappaNode
     }
     
-    func touchDown(atPoint pos : CGPoint) {
+    override func touchDown(atPoint pos : CGPoint) {
         if pos.x < 0 {
             kappa.moveLeft()
         } else {
@@ -26,27 +26,6 @@ class GameScene: BaseScene {
         makeHamon(pos)
     }
     
-    func touchMoved(toPoint pos : CGPoint) {
-    }
-    
-    func touchUp(atPoint pos : CGPoint) {
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchDown(atPoint: t.location(in: self)) }
-    }
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-    }
-    
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-    }
     
     override func update(_ currentTime: TimeInterval) {
         if (self.lastUpdateTime == 0) {

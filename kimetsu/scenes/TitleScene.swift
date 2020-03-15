@@ -24,24 +24,39 @@ class TitleScene: BaseScene {
         view!.presentScene(nextScene, transition: .doorway(withDuration: 1.3))
     }
     
+    private func goTutorial1(){
+        if onceFlag {
+            return
+        }
+        onceFlag = true
+
+        let nextScene = GameScene(fileNamed: "Tutorial1Scene")!
+        nextScene.size = self.scene!.size
+        nextScene.scaleMode = SKSceneScaleMode.aspectFit
+        view!.presentScene(nextScene, transition: .doorway(withDuration: 1.3))
+    }
+
+    
     /**************************************************************************/
     /************************ touch   *****************************************/
     /**************************************************************************/
     
-    func touchDown(atPoint pos : CGPoint) {
+    override func touchDown(atPoint pos : CGPoint) {
         makeHamon(pos)
-
     }
     
-    func touchMoved(toPoint pos : CGPoint) {
-    }
-    
-    func touchUp(atPoint pos : CGPoint) {
+    override func touchUp(atPoint pos : CGPoint) {
         let tapNodes = self.nodes(at: pos)
         for tapNode in tapNodes {
             if let name = tapNode.name {
                 switch name {
                 case "start_button":
+                    
+                    if !UserDefaults.standard.bool(forKey: "is_clear_tutorial1") {
+                        goTutorial1()
+                        return
+                    }
+                    
                     goGame()
                     return
                 default:
@@ -49,22 +64,6 @@ class TitleScene: BaseScene {
                 }
             }
         }
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchDown(atPoint: t.location(in: self)) }
-    }
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-    }
-    
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
     }
     
     override func update(_ currentTime: TimeInterval) {
