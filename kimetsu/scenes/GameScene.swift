@@ -24,7 +24,6 @@ class GameScene: BaseScene {
         } else {
             kappa.moveRight()
         }
-
         makeHamon(pos)
     }
     

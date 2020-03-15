@@ -1,12 +1,13 @@
 import Foundation
 import SpriteKit
 import GameplayKit
-class Tutorial1Scene: BaseScene {
+class Tutorial2Scene: BaseScene {
 
     override func sceneDidLoad() {
         commonSceneDidLoad()
         setKappa()
         addFire()
+        addEnemy()
     }
     
     private func addFire(){
@@ -16,22 +17,15 @@ class Tutorial1Scene: BaseScene {
         self.addChild(fire)
     }
     
-    /**************************************************************************/
-    /************************ 遷移             *****************************************/
-    /**************************************************************************/
-    public var onceFlag = false
-    private func goNextTutorial(){
-        if onceFlag {
-            return
-        }
-        onceFlag = true
-
-        let nextScene = Tutorial2Scene(fileNamed: "Tutorial2Scene")!
-        nextScene.size = self.scene!.size
-        nextScene.scaleMode = SKSceneScaleMode.aspectFit
-        view!.presentScene(nextScene, transition: .doorway(withDuration: 1.3))
+    private func addEnemy(){
+        
+        
     }
-
+    
+    private func goNextTutorial(){
+        
+    }
+    
     override func touchDown(atPoint pos : CGPoint) {
         if pos.x < 0 {
             if kappa.pos <= 0 {

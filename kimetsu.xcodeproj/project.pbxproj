@@ -25,6 +25,8 @@
 		CE00A311241DE6B100A9DC08 /* fire.sks in Resources */ = {isa = PBXBuildFile; fileRef = CE00A310241DE6B100A9DC08 /* fire.sks */; };
 		CE00A314241DEE3B00A9DC08 /* FireEmitterNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00A313241DEE3B00A9DC08 /* FireEmitterNode.swift */; };
 		CE00A317241DF08200A9DC08 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00A316241DF08200A9DC08 /* Const.swift */; };
+		CE00A319241DF33B00A9DC08 /* Tutorial2Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00A318241DF33B00A9DC08 /* Tutorial2Scene.swift */; };
+		CE00A31D241DF37B00A9DC08 /* Tutorial2Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = CE00A31C241DF37B00A9DC08 /* Tutorial2Scene.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		CE00A310241DE6B100A9DC08 /* fire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = fire.sks; sourceTree = "<group>"; };
 		CE00A313241DEE3B00A9DC08 /* FireEmitterNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireEmitterNode.swift; sourceTree = "<group>"; };
 		CE00A316241DF08200A9DC08 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		CE00A318241DF33B00A9DC08 /* Tutorial2Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial2Scene.swift; sourceTree = "<group>"; };
+		CE00A31C241DF37B00A9DC08 /* Tutorial2Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tutorial2Scene.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 			children = (
 				CE00A302241D292100A9DC08 /* TitleScene.sks */,
 				CE00A30A241DD8DC00A9DC08 /* Tutorial1Scene.sks */,
+				CE00A31C241DF37B00A9DC08 /* Tutorial2Scene.sks */,
 				CE00A2E1241D002800A9DC08 /* GameScene.sks */,
 				CE00A2E3241D002800A9DC08 /* Actions.sks */,
 			);
@@ -113,6 +118,7 @@
 				CE00A304241DC79700A9DC08 /* BaseScene.swift */,
 				CE00A300241D272100A9DC08 /* TitleScene.swift */,
 				CE00A308241DD82900A9DC08 /* Tutorial1Scene.swift */,
+				CE00A318241DF33B00A9DC08 /* Tutorial2Scene.swift */,
 				CE00A2E5241D002800A9DC08 /* GameScene.swift */,
 			);
 			path = scenes;
@@ -217,6 +223,7 @@
 				CE00A311241DE6B100A9DC08 /* fire.sks in Resources */,
 				CE00A2E4241D002800A9DC08 /* Actions.sks in Resources */,
 				CE00A303241D292100A9DC08 /* TitleScene.sks in Resources */,
+				CE00A31D241DF37B00A9DC08 /* Tutorial2Scene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE00A2E6241D002800A9DC08 /* GameScene.swift in Sources */,
+				CE00A319241DF33B00A9DC08 /* Tutorial2Scene.swift in Sources */,
 				CE00A307241DD2C600A9DC08 /* KappaNode.swift in Sources */,
 				CE00A30D241DDD0900A9DC08 /* CommonUtil.swift in Sources */,
 				CE00A2E8241D002800A9DC08 /* GameViewController.swift in Sources */,
