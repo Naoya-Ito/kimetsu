@@ -28,6 +28,9 @@
 		CE00A319241DF33B00A9DC08 /* Tutorial2Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00A318241DF33B00A9DC08 /* Tutorial2Scene.swift */; };
 		CE00A31D241DF37B00A9DC08 /* Tutorial2Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = CE00A31C241DF37B00A9DC08 /* Tutorial2Scene.sks */; };
 		CE00A31F241DFD2400A9DC08 /* EnemyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00A31E241DFD2400A9DC08 /* EnemyNode.swift */; };
+		CE00A322241E015E00A9DC08 /* spark.sks in Resources */ = {isa = PBXBuildFile; fileRef = CE00A320241E015E00A9DC08 /* spark.sks */; };
+		CE00A325241E018E00A9DC08 /* SparkEmitterNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00A324241E018E00A9DC08 /* SparkEmitterNode.swift */; };
+		CE00A327241E14A700A9DC08 /* WorldNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00A326241E14A700A9DC08 /* WorldNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		CE00A318241DF33B00A9DC08 /* Tutorial2Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial2Scene.swift; sourceTree = "<group>"; };
 		CE00A31C241DF37B00A9DC08 /* Tutorial2Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tutorial2Scene.sks; sourceTree = "<group>"; };
 		CE00A31E241DFD2400A9DC08 /* EnemyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyNode.swift; sourceTree = "<group>"; };
+		CE00A320241E015E00A9DC08 /* spark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = spark.sks; sourceTree = "<group>"; };
+		CE00A324241E018E00A9DC08 /* SparkEmitterNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkEmitterNode.swift; sourceTree = "<group>"; };
+		CE00A326241E14A700A9DC08 /* WorldNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +146,7 @@
 			children = (
 				CE00A306241DD2C600A9DC08 /* KappaNode.swift */,
 				CE00A31E241DFD2400A9DC08 /* EnemyNode.swift */,
+				CE00A326241E14A700A9DC08 /* WorldNode.swift */,
 			);
 			path = nodes;
 			sourceTree = "<group>";
@@ -148,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				CE00A310241DE6B100A9DC08 /* fire.sks */,
+				CE00A320241E015E00A9DC08 /* spark.sks */,
 			);
 			path = particles;
 			sourceTree = "<group>";
@@ -156,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				CE00A313241DEE3B00A9DC08 /* FireEmitterNode.swift */,
+				CE00A324241E018E00A9DC08 /* SparkEmitterNode.swift */,
 			);
 			path = emitters;
 			sourceTree = "<group>";
@@ -227,6 +236,7 @@
 				CE00A2E4241D002800A9DC08 /* Actions.sks in Resources */,
 				CE00A303241D292100A9DC08 /* TitleScene.sks in Resources */,
 				CE00A31D241DF37B00A9DC08 /* Tutorial2Scene.sks in Resources */,
+				CE00A322241E015E00A9DC08 /* spark.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,7 +251,9 @@
 				CE00A319241DF33B00A9DC08 /* Tutorial2Scene.swift in Sources */,
 				CE00A307241DD2C600A9DC08 /* KappaNode.swift in Sources */,
 				CE00A30D241DDD0900A9DC08 /* CommonUtil.swift in Sources */,
+				CE00A327241E14A700A9DC08 /* WorldNode.swift in Sources */,
 				CE00A2E8241D002800A9DC08 /* GameViewController.swift in Sources */,
+				CE00A325241E018E00A9DC08 /* SparkEmitterNode.swift in Sources */,
 				CE00A2E0241D002800A9DC08 /* AppDelegate.swift in Sources */,
 				CE00A301241D272100A9DC08 /* TitleScene.swift in Sources */,
 				CE00A314241DEE3B00A9DC08 /* FireEmitterNode.swift in Sources */,

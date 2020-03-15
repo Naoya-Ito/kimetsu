@@ -2,7 +2,7 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
-class BaseScene: SKScene {
+class BaseScene: SKScene, SKPhysicsContactDelegate {
 
     public var lastUpdateTime : TimeInterval = 0
     
@@ -20,9 +20,24 @@ class BaseScene: SKScene {
     public func setKappa(){
         kappa = self.childNode(withName: "//kappa") as! KappaNode
         kappa.setScreenInfo(sceneWidth : self.scene!.size.width)
-
     }
     
+    public func makeSpark(_ pos : CGPoint){
+        let node = SparkEmitterNode.makeSpark(0.3)
+        node.position = pos
+        self.addChild(node)
+    }
+
+    
+    public func setWorld(){
+        physicsWorld.contactDelegate = self
+        let underground = childNode(withName: "//underground") as? WorldNode
+        underground?.setPhysic()
+    }
+    
+    /**************************************************************************/
+    /************************ tap              *****************************************/
+    /**************************************************************************/
     // タップ時の波紋
     var hamonNode : SKShapeNode?
     public func createInitHamonNode(){

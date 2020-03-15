@@ -9,6 +9,7 @@ class Tutorial2Scene: BaseScene {
     override func sceneDidLoad() {
         commonSceneDidLoad()
         setKappa()
+        setWorld()
         addFire()
         addEnemy()
     }
@@ -22,6 +23,7 @@ class Tutorial2Scene: BaseScene {
     
     private func addEnemy(){
         let enemy = EnemyNode(imageNamed: "tanuki")
+        enemy.setPhysic()
         enemy.position.x = kappa.position.x + (self.size.width)/7.0*3 + Const.ENEMY_SPACE
         enemy.position.y = kappa.position.y
         
@@ -44,8 +46,9 @@ class Tutorial2Scene: BaseScene {
                 if enemy.hp > 0 {
                     kappa.normalAttack()
                     enemy.hp -= 1
+                    makeSpark(enemy.rndPos())
                     if enemy.hp <= 0 {
-                        enemy.removeFromParent()
+                        enemy.beatAway()
                     }
                     return
                 }

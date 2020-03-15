@@ -6,6 +6,7 @@ class Tutorial1Scene: BaseScene {
     override func sceneDidLoad() {
         commonSceneDidLoad()
         setKappa()
+        setWorld()
         addFire()
     }
     

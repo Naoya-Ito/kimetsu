@@ -52,7 +52,7 @@ class KappaNode : SKSpriteNode {
         isMoving = true
         pos += 1
         xScale = 1
-
+        texture = SKTexture(imageNamed: "kappa")
         run(moveRightAnimation, completion: {
             self.isMoving = false
         })
@@ -65,6 +65,7 @@ class KappaNode : SKSpriteNode {
         isMoving = true
         pos -= 1
         xScale = -1
+        texture = SKTexture(imageNamed: "kappa")
         run(moveLeftAnimation, completion: {
             self.isMoving = false
         })

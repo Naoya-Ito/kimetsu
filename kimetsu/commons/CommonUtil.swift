@@ -19,7 +19,12 @@ class CommonUtil {
         let random = arc4random_uniform(UInt32(range)) + UInt32(min)
         return random
     }
-
+    
+    class func rndPos(_ pos : CGPoint, width : Int) -> CGPoint {
+        let x = pos.x + CGFloat(-width/2 + CommonUtil.rnd(width))
+        let y = pos.y + CGFloat(-width/2 + CommonUtil.rnd(width))
+        return CGPoint(x: x, y: y)
+    }
 
     class func distance(from: CGPoint, to : CGPoint) -> CGFloat {
         return CGFloat(hypotf(Float(to.x - from.x), Float(to.y - from.y)))
