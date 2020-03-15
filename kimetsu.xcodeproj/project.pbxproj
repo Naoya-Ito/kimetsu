@@ -21,6 +21,7 @@
 		CE00A307241DD2C600A9DC08 /* KappaNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00A306241DD2C600A9DC08 /* KappaNode.swift */; };
 		CE00A309241DD82900A9DC08 /* Tutorial1Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00A308241DD82900A9DC08 /* Tutorial1Scene.swift */; };
 		CE00A30B241DD8DC00A9DC08 /* Tutorial1Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = CE00A30A241DD8DC00A9DC08 /* Tutorial1Scene.sks */; };
+		CE00A30D241DDD0900A9DC08 /* CommonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00A30C241DDD0900A9DC08 /* CommonUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		CE00A306241DD2C600A9DC08 /* KappaNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KappaNode.swift; sourceTree = "<group>"; };
 		CE00A308241DD82900A9DC08 /* Tutorial1Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial1Scene.swift; sourceTree = "<group>"; };
 		CE00A30A241DD8DC00A9DC08 /* Tutorial1Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tutorial1Scene.sks; sourceTree = "<group>"; };
+		CE00A30C241DDD0900A9DC08 /* CommonUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +75,8 @@
 			isa = PBXGroup;
 			children = (
 				CE00A2DF241D002800A9DC08 /* AppDelegate.swift */,
-				CE00A306241DD2C600A9DC08 /* KappaNode.swift */,
+				CE00A30E241DDD0E00A9DC08 /* commons */,
+				CE00A30F241DDE4200A9DC08 /* nodes */,
 				CE00A2FE241D243500A9DC08 /* skss */,
 				CE00A2FF241D245000A9DC08 /* scenes */,
 				CE00A2E7241D002800A9DC08 /* GameViewController.swift */,
@@ -105,6 +108,22 @@
 				CE00A2E5241D002800A9DC08 /* GameScene.swift */,
 			);
 			path = scenes;
+			sourceTree = "<group>";
+		};
+		CE00A30E241DDD0E00A9DC08 /* commons */ = {
+			isa = PBXGroup;
+			children = (
+				CE00A30C241DDD0900A9DC08 /* CommonUtil.swift */,
+			);
+			path = commons;
+			sourceTree = "<group>";
+		};
+		CE00A30F241DDE4200A9DC08 /* nodes */ = {
+			isa = PBXGroup;
+			children = (
+				CE00A306241DD2C600A9DC08 /* KappaNode.swift */,
+			);
+			path = nodes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,6 +203,7 @@
 			files = (
 				CE00A2E6241D002800A9DC08 /* GameScene.swift in Sources */,
 				CE00A307241DD2C600A9DC08 /* KappaNode.swift in Sources */,
+				CE00A30D241DDD0900A9DC08 /* CommonUtil.swift in Sources */,
 				CE00A2E8241D002800A9DC08 /* GameViewController.swift in Sources */,
 				CE00A2E0241D002800A9DC08 /* AppDelegate.swift in Sources */,
 				CE00A301241D272100A9DC08 /* TitleScene.swift in Sources */,

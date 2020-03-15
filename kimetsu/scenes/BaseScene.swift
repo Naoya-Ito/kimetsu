@@ -5,6 +5,9 @@ import GameplayKit
 class BaseScene: SKScene {
 
     public var lastUpdateTime : TimeInterval = 0
+    
+    public var kappa : KappaNode = KappaNode()
+
     override func sceneDidLoad() {
         commonSceneDidLoad()
     }
@@ -12,6 +15,12 @@ class BaseScene: SKScene {
     public func commonSceneDidLoad(){
         createInitHamonNode()
         self.lastUpdateTime = 0
+    }
+    
+    public func setKappa(){
+        kappa = self.childNode(withName: "//kappa") as! KappaNode
+        kappa.setScreenInfo(sceneWidth : self.scene!.size.width)
+
     }
     
     // タップ時の波紋
@@ -29,8 +38,7 @@ class BaseScene: SKScene {
             n.strokeColor = .white
             n.name = "spiny"
             self.addChild(n)
-//            let to_scale = CGFloat(5 + CommonUtil.rnd(11))
-            let to_scale = CGFloat(5 + 6)
+            let to_scale = CGFloat(5 + CommonUtil.rnd(11))
             n.run(SKAction.sequence([
                 SKAction.scale(to: to_scale, duration: 0.3),
                 SKAction.wait(forDuration: 1.0),

@@ -6,11 +6,9 @@ class GameScene: BaseScene {
     var entities = [GKEntity]()
     var graphs = [String : GKGraph]()
     
-    private var kappa : KappaNode = KappaNode()
-    
     override func sceneDidLoad() {
         commonSceneDidLoad()
-        kappa = self.childNode(withName: "//kappa") as! KappaNode
+        setKappa()
     }
 
     override func didMove(to view: SKView) {
@@ -18,7 +16,11 @@ class GameScene: BaseScene {
     
     override func touchDown(atPoint pos : CGPoint) {
         if pos.x < 0 {
-            kappa.moveLeft()
+            if kappa.pos <= 0 {
+                kappa.moveLeftBack()
+            } else {
+                kappa.moveLeft()
+            }
         } else {
             kappa.moveRight()
         }
