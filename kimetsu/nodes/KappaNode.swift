@@ -15,6 +15,7 @@ class KappaNode : SKSpriteNode {
     private var moveRightAnimation : SKAction!
     private var moveLeftAnimation : SKAction!
     private var moveLeftBackAnimation : SKAction!
+    private var normalAttackAnimation : SKAction!
     public func setScreenInfo(sceneWidth : CGFloat){
         moveSpace = sceneWidth/7.0/4.0
         
@@ -38,6 +39,10 @@ class KappaNode : SKSpriteNode {
             SKAction.moveBy(x:  moveSpace, y: -jumpSpace, duration: moveSpeed),
         ])
 
+        normalAttackAnimation = SKAction.sequence([
+            SKAction.moveBy(x: moveSpace,  y: 0.0, duration: moveSpeed),
+            SKAction.moveBy(x: -moveSpace, y: 0.0, duration: moveSpeed),
+        ])
     }
     
     public func moveRight(){
@@ -76,6 +81,22 @@ class KappaNode : SKSpriteNode {
             self.xScale = 1
         })
         run(moveLeftBackAnimation, completion: {
+            self.isMoving = false
+        })
+    }
+    
+    public func normalAttack(){
+        if isMoving {
+            return
+        }
+        isMoving = true
+        xScale = 1
+        
+        let images = ["kappa_punch", "kappa_upper", "kappa_kick", "kappa_body", "kappa_punch_r", "kappa_flying"]
+        let image = images[CommonUtil.rnd(images.count)]
+        texture = SKTexture(imageNamed: image)
+        
+        run(normalAttackAnimation, completion: {
             self.isMoving = false
         })
     }
