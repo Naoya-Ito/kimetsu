@@ -2,7 +2,7 @@
 import SpriteKit
 import GameplayKit
 
-class TitleScene: SKScene {
+class TitleScene: BaseScene {
     
     var entities = [GKEntity]()
     var graphs = [String : GKGraph]()
@@ -10,6 +10,8 @@ class TitleScene: SKScene {
     private var lastUpdateTime : TimeInterval = 0
     override func sceneDidLoad() {
 
+        createInitHamonNode()
+        
         self.lastUpdateTime = 0
     }
     
@@ -34,6 +36,8 @@ class TitleScene: SKScene {
     /**************************************************************************/
     
     func touchDown(atPoint pos : CGPoint) {
+        makeHamon(pos)
+
     }
     
     func touchMoved(toPoint pos : CGPoint) {
