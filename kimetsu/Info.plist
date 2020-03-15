@@ -45,5 +45,7 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>CFBundleDisplayName</key>
+	<string>鬼滅のカッパ</string>
 </dict>
 </plist>
