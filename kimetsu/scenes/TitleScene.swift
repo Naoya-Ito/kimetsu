@@ -7,13 +7,6 @@ class TitleScene: BaseScene {
     var entities = [GKEntity]()
     var graphs = [String : GKGraph]()
     
-    private var lastUpdateTime : TimeInterval = 0
-    override func sceneDidLoad() {
-
-        createInitHamonNode()
-        
-        self.lastUpdateTime = 0
-    }
     
     /**************************************************************************/
     /************************ 遷移             *****************************************/

@@ -6,6 +6,18 @@ import GameplayKit
 
 class BaseScene: SKScene {
 
+    public var lastUpdateTime : TimeInterval = 0
+    override func sceneDidLoad() {
+        commonSceneDidLoad()
+    }
+    
+    public func commonSceneDidLoad(){
+        createInitHamonNode()
+        self.lastUpdateTime = 0
+    }
+    
+
+    
     
     // タップ時の波紋
     var hamonNode : SKShapeNode?
