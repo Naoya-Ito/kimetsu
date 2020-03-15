@@ -1,6 +1,4 @@
-
 import Foundation
-
 import SpriteKit
 import GameplayKit
 
@@ -15,9 +13,6 @@ class BaseScene: SKScene {
         createInitHamonNode()
         self.lastUpdateTime = 0
     }
-    
-
-    
     
     // タップ時の波紋
     var hamonNode : SKShapeNode?

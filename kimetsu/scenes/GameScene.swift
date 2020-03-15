@@ -6,31 +6,21 @@ class GameScene: BaseScene {
     var entities = [GKEntity]()
     var graphs = [String : GKGraph]()
     
-    private var kappa : SKSpriteNode = SKSpriteNode()
+    private var kappa : KappaNode = KappaNode()
     
     override func sceneDidLoad() {
         commonSceneDidLoad()
     }
 
     override func didMove(to view: SKView) {
-        kappa = self.childNode(withName: "//kappa") as! SKSpriteNode
+        kappa = self.childNode(withName: "//kappa") as! KappaNode
     }
-    
-    private func moveRight(){
-        kappa.position.x += 20
-        
-    }
-    
-    private func moveLeft(){
-        kappa.position.x -= 20
-    }
-    
     
     func touchDown(atPoint pos : CGPoint) {
         if pos.x < 0 {
-            moveLeft()
+            kappa.moveLeft()
         } else {
-            moveRight()
+            kappa.moveRight()
         }
 
         makeHamon(pos)
@@ -58,7 +48,6 @@ class GameScene: BaseScene {
         for t in touches { self.touchUp(atPoint: t.location(in: self)) }
     }
     
-    
     override func update(_ currentTime: TimeInterval) {
         if (self.lastUpdateTime == 0) {
             self.lastUpdateTime = currentTime
@@ -69,7 +58,6 @@ class GameScene: BaseScene {
         for entity in self.entities {
             entity.update(deltaTime: dt)
         }
-        
         self.lastUpdateTime = currentTime
     }
 }

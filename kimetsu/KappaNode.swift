@@ -1,9 +1,17 @@
-//
-//  KappaNode.swift
-//  kimetsu
-//
-//  Created by ItoNaoya on 2020/03/15.
-//  Copyright © 2020 勇者かっぱ. All rights reserved.
-//
-
 import Foundation
+import SpriteKit
+
+class KappaNode : SKSpriteNode {
+    
+    public func moveRight(){
+        xScale = 1
+        position.x += 5
+        
+    }
+    
+    public func moveLeft(){
+        xScale = -1
+        position.x -= 5
+    }
+    
+}
