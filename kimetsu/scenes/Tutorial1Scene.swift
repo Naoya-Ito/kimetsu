@@ -3,10 +3,17 @@ import SpriteKit
 import GameplayKit
 class Tutorial1Scene: BaseScene {
 
-
     override func sceneDidLoad() {
         commonSceneDidLoad()
         setKappa()
+        addFire()
+    }
+    
+    private func addFire(){
+        let fire_light = self.childNode(withName: "//fire_light") as! SKLightNode
+        let fire = FireEmitterNode.makeFire()
+        fire.position = fire_light.position
+        self.addChild(fire)
     }
     
     override func touchDown(atPoint pos : CGPoint) {
@@ -17,9 +24,11 @@ class Tutorial1Scene: BaseScene {
                 kappa.moveLeft()
             }
         } else {
-            kappa.moveRight()
+            if kappa.pos >= Const.MAX_KAPPA_POSITION {
+            } else {
+                kappa.moveRight()
+            }
         }
-
         makeHamon(pos)
     }
 }

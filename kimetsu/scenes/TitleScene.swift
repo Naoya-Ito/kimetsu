@@ -7,7 +7,6 @@ class TitleScene: BaseScene {
     var entities = [GKEntity]()
     var graphs = [String : GKGraph]()
     
-    
     /**************************************************************************/
     /************************ 遷移             *****************************************/
     /**************************************************************************/
@@ -30,7 +29,7 @@ class TitleScene: BaseScene {
         }
         onceFlag = true
 
-        let nextScene = GameScene(fileNamed: "Tutorial1Scene")!
+        let nextScene = Tutorial1Scene(fileNamed: "Tutorial1Scene")!
         nextScene.size = self.scene!.size
         nextScene.scaleMode = SKSceneScaleMode.aspectFit
         view!.presentScene(nextScene, transition: .doorway(withDuration: 1.3))
@@ -51,7 +50,6 @@ class TitleScene: BaseScene {
             if let name = tapNode.name {
                 switch name {
                 case "start_button":
-                    
                     if !UserDefaults.standard.bool(forKey: "is_clear_tutorial1") {
                         goTutorial1()
                         return
@@ -70,13 +68,10 @@ class TitleScene: BaseScene {
         if (self.lastUpdateTime == 0) {
             self.lastUpdateTime = currentTime
         }
-        
         let dt = currentTime - self.lastUpdateTime
-        
         for entity in self.entities {
             entity.update(deltaTime: dt)
         }
-        
         self.lastUpdateTime = currentTime
     }
 }
