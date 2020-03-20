@@ -31,15 +31,22 @@ class EnemyNode : SKSpriteNode {
     
     // 吹っ飛んで消える
     public func beatAway(){
-        let vect = CGVector(dx: 1000, dy: CommonUtil.rnd(300))
+//        let vect = CGVector(dx: 1000, dy: CommonUtil.rnd(300))
         physicsBody?.allowsRotation = true
         physicsBody?.applyTorque(1.0)
-        let beatAction = SKAction.move(by: vect, duration: 0.6)
+//        let beatAction = SKAction.move(by: vect, duration: 0.6)
         
-        run(beatAction, completion: {
-            self.removeFromParent()
-        })
+        let beatAction = SKAction.sequence([
+            SKAction.moveBy(x: 1000.0, y: CGFloat(CommonUtil.rnd(300)), duration: 0.3),
+            SKAction.removeFromParent()
+        ])
+        run(beatAction)
         print("beat away")
     }
     
+    public func positionTop() -> CGPoint {
+        let top_pos = CGPoint(x: position.x + 120, y: position.y + 160)
+        
+        return top_pos
+    }
 }

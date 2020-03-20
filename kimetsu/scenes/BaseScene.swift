@@ -5,7 +5,7 @@ import GameplayKit
 class BaseScene: SKScene, SKPhysicsContactDelegate {
 
     public var lastUpdateTime : TimeInterval = 0
-    
+    public var onceFlag = false
     public var kappa : KappaNode = KappaNode()
 
     override func sceneDidLoad() {
@@ -28,7 +28,6 @@ class BaseScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(node)
     }
 
-    
     public func setWorld(){
         physicsWorld.contactDelegate = self
         let underground = childNode(withName: "//underground") as? WorldNode
@@ -58,9 +57,29 @@ class BaseScene: SKScene, SKPhysicsContactDelegate {
                 SKAction.scale(to: to_scale, duration: 0.3),
                 SKAction.wait(forDuration: 1.0),
                 SKAction.fadeOut(withDuration: 0.6),
-                SKAction.removeFromParent()]))
+                SKAction.removeFromParent()
+            ]))
         }
     }
+    
+    public func displayDamage(_ text : String, _ pos : CGPoint, _ color : UIColor = .white) {
+        let label = SKLabelNode(fontNamed: "Cochin-Bold")
+        label.text = text
+        label.fontSize = 46
+        label.fontColor = color
+        label.horizontalAlignmentMode = .center        
+        label.position = pos
+
+        let animation = SKAction.sequence([
+            SKAction.moveBy(x: 0, y: 50.0, duration: 0.8),
+            SKAction.wait(forDuration: 0.3),
+            SKAction.fadeOut(withDuration: 0.6),
+            SKAction.removeFromParent()
+        ])
+        label.run(animation)
+        self.addChild(label)
+    }
+
     
     
     func touchDown(atPoint pos : CGPoint) {

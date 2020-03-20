@@ -31,6 +31,8 @@
 		CE00A322241E015E00A9DC08 /* spark.sks in Resources */ = {isa = PBXBuildFile; fileRef = CE00A320241E015E00A9DC08 /* spark.sks */; };
 		CE00A325241E018E00A9DC08 /* SparkEmitterNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00A324241E018E00A9DC08 /* SparkEmitterNode.swift */; };
 		CE00A327241E14A700A9DC08 /* WorldNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00A326241E14A700A9DC08 /* WorldNode.swift */; };
+		CE7F2420242519C60072C2DD /* Tutorial3Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F241F242519C60072C2DD /* Tutorial3Scene.swift */; };
+		CE7F2422242519EE0072C2DD /* Tutorial3Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = CE7F2421242519EE0072C2DD /* Tutorial3Scene.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		CE00A320241E015E00A9DC08 /* spark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = spark.sks; sourceTree = "<group>"; };
 		CE00A324241E018E00A9DC08 /* SparkEmitterNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkEmitterNode.swift; sourceTree = "<group>"; };
 		CE00A326241E14A700A9DC08 /* WorldNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldNode.swift; sourceTree = "<group>"; };
+		CE7F241F242519C60072C2DD /* Tutorial3Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial3Scene.swift; sourceTree = "<group>"; };
+		CE7F2421242519EE0072C2DD /* Tutorial3Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tutorial3Scene.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,7 @@
 				CE00A302241D292100A9DC08 /* TitleScene.sks */,
 				CE00A30A241DD8DC00A9DC08 /* Tutorial1Scene.sks */,
 				CE00A31C241DF37B00A9DC08 /* Tutorial2Scene.sks */,
+				CE7F2421242519EE0072C2DD /* Tutorial3Scene.sks */,
 				CE00A2E1241D002800A9DC08 /* GameScene.sks */,
 				CE00A2E3241D002800A9DC08 /* Actions.sks */,
 			);
@@ -125,8 +130,7 @@
 			children = (
 				CE00A304241DC79700A9DC08 /* BaseScene.swift */,
 				CE00A300241D272100A9DC08 /* TitleScene.swift */,
-				CE00A308241DD82900A9DC08 /* Tutorial1Scene.swift */,
-				CE00A318241DF33B00A9DC08 /* Tutorial2Scene.swift */,
+				CE7F241E242519920072C2DD /* tutorials */,
 				CE00A2E5241D002800A9DC08 /* GameScene.swift */,
 			);
 			path = scenes;
@@ -167,6 +171,16 @@
 				CE00A324241E018E00A9DC08 /* SparkEmitterNode.swift */,
 			);
 			path = emitters;
+			sourceTree = "<group>";
+		};
+		CE7F241E242519920072C2DD /* tutorials */ = {
+			isa = PBXGroup;
+			children = (
+				CE00A308241DD82900A9DC08 /* Tutorial1Scene.swift */,
+				CE00A318241DF33B00A9DC08 /* Tutorial2Scene.swift */,
+				CE7F241F242519C60072C2DD /* Tutorial3Scene.swift */,
+			);
+			path = tutorials;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE00A2EB241D002800A9DC08 /* Main.storyboard in Resources */,
+				CE7F2422242519EE0072C2DD /* Tutorial3Scene.sks in Resources */,
 				CE00A30B241DD8DC00A9DC08 /* Tutorial1Scene.sks in Resources */,
 				CE00A2E2241D002800A9DC08 /* GameScene.sks in Resources */,
 				CE00A2ED241D002D00A9DC08 /* Assets.xcassets in Resources */,
@@ -251,6 +266,7 @@
 				CE00A319241DF33B00A9DC08 /* Tutorial2Scene.swift in Sources */,
 				CE00A307241DD2C600A9DC08 /* KappaNode.swift in Sources */,
 				CE00A30D241DDD0900A9DC08 /* CommonUtil.swift in Sources */,
+				CE7F2420242519C60072C2DD /* Tutorial3Scene.swift in Sources */,
 				CE00A327241E14A700A9DC08 /* WorldNode.swift in Sources */,
 				CE00A2E8241D002800A9DC08 /* GameViewController.swift in Sources */,
 				CE00A325241E018E00A9DC08 /* SparkEmitterNode.swift in Sources */,
