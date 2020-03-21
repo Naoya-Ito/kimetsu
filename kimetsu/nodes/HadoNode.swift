@@ -4,8 +4,8 @@ import SpriteKit
 class HadoNode : SKShapeNode {
 
     class func makeHado() -> HadoNode {
-        let hado = HadoNode(circleOfRadius: 30)
-        hado.fillColor = .yellow
+        let hado = HadoNode(circleOfRadius: 20)
+        hado.fillColor = .white
         hado.strokeColor = .black
         hado.zPosition = 1
         hado.setPhysic()
@@ -23,7 +23,7 @@ class HadoNode : SKShapeNode {
     
     public func shot(){
         let action = SKAction.sequence([
-            SKAction.moveBy(x: 800.0, y: -20 + CGFloat(CommonUtil.rnd(320)), duration: 0.5),
+            SKAction.moveBy(x: 500.0, y: -20 + CGFloat(CommonUtil.rnd(220)), duration: 0.5),
             SKAction.removeFromParent()
         ])
         run(action)

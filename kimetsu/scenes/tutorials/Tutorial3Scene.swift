@@ -24,7 +24,8 @@ class Tutorial3Scene: BaseScene {
     private func addEnemy(){
         enemy = EnemyNode(imageNamed: "ghost")
         enemy.setPhysic()
-        enemy.position.x = kappa.position.x + (self.size.width)/7.0*ENEMY_POSITION + Const.ENEMY_SPACE
+        let pos = CGFloat(ENEMY_POSITION)
+        enemy.position.x = kappa.position.x + (self.size.width)/7.0*pos + Const.ENEMY_SPACE
         enemy.position.y = kappa.position.y
         self.addChild(enemy)
     }
@@ -32,11 +33,10 @@ class Tutorial3Scene: BaseScene {
     
     private func shot(){
         let hado = HadoNode.makeHado()
-        hado.position = kappa.position
+        hado.position = kappa.positionRight()
         addChild(hado)
         hado.shot()
     }
-    
     
     private func damagedEnemy(){
         let damage = 1 + CommonUtil.rnd(3)

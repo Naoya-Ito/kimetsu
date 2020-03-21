@@ -35,7 +35,8 @@ class Tutorial2Scene: BaseScene {
         enemy = EnemyNode(imageNamed: "tanuki")
         enemy.setPhysic()
         enemy.hp = 20
-        enemy.position.x = kappa.position.x + (self.size.width)/7.0*ENEMY_POSITION + Const.ENEMY_SPACE
+        let pos = CGFloat(ENEMY_POSITION)
+        enemy.position.x = kappa.position.x + (self.size.width)/7.0*pos + Const.ENEMY_SPACE
         enemy.position.y = kappa.position.y
         self.addChild(enemy)
     }

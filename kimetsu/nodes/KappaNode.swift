@@ -106,4 +106,9 @@ class KappaNode : SKSpriteNode {
         xScale = 1
         texture = SKTexture(imageNamed: "kappa_punch")
     }
+    
+    public func positionRight() -> CGPoint {
+        return CGPoint(x: position.x + 60, y: position.y)
+        
+    }
 }
