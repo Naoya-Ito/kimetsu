@@ -22,8 +22,7 @@ class Tutorial2Scene: BaseScene {
     }
     
     private func addEnemy(){
-        print("added enemy")
-        let enemy = EnemyNode(imageNamed: "tanuki")
+        enemy = EnemyNode(imageNamed: "tanuki")
         enemy.setPhysic()
         enemy.position.x = kappa.position.x + (self.size.width)/7.0*3 + Const.ENEMY_SPACE
         enemy.position.y = kappa.position.y
@@ -53,19 +52,12 @@ class Tutorial2Scene: BaseScene {
             if kappa.pos == ENEMY_POSITION - 1 {
                 if enemy.hp > 0 {
                     kappa.normalAttack()
-                    enemy.hp -= 1 + CommonUtil.rnd(3)
-                    displayDamage("1", enemy.positionTop())
+                    let damage = 1 + CommonUtil.rnd(3)
+                    enemy.hp -= damage
+                    displayDamage("\(damage)", enemy.positionTop())
                     makeSpark(enemy.rndPos())
                     if enemy.hp <= 0 {
                         enemy.beatAway()
-                        
-                        let beatAction = SKAction.moveBy(x: 1000.0, y: CGFloat(CommonUtil.rnd(300)), duration: 0.3)
-                        
-                        enemy.run(beatAction, completion: {
-                            self.removeFromParent()
-                        })
-
-                        
                     }
                     return
                 }

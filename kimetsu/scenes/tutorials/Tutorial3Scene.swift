@@ -22,7 +22,7 @@ class Tutorial3Scene: BaseScene {
     }
     
     private func addEnemy(){
-        let enemy = EnemyNode(imageNamed: "ghost")
+        enemy = EnemyNode(imageNamed: "ghost")
         enemy.setPhysic()
         enemy.position.x = kappa.position.x + (self.size.width)/7.0*3 + Const.ENEMY_SPACE
         enemy.position.y = kappa.position.y

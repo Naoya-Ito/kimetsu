@@ -41,10 +41,6 @@ class TitleScene: BaseScene {
     
     override func touchDown(atPoint pos : CGPoint) {
         makeHamon(pos)
-        
-        let fire_light = self.childNode(withName: "//start") as! SKLabelNode
-        print("font=\(fire_light.fontName)")
-        
     }
     
     override func touchUp(atPoint pos : CGPoint) {
