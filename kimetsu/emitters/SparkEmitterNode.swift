@@ -22,5 +22,4 @@ class SparkEmitterNode: SKEmitterNode {
         })
         return particle
     }
-        
 }

@@ -7,6 +7,20 @@ class TitleScene: BaseScene {
     var entities = [GKEntity]()
     var graphs = [String : GKGraph]()
     
+    
+    override func sceneDidLoad() {
+        commonSceneDidLoad()
+        addSnow()
+    }
+
+    private func addSnow(){
+        let shape = self.childNode(withName: "//ads") as! SKSpriteNode
+        let node = SnowEmitterNode.makeSnow()
+        node.position = CGPoint(x: 0, y: shape.position.y - 100)
+        self.addChild(node)
+    }
+    
+    
     /**************************************************************************/
     /************************ 遷移             *****************************************/
     /**************************************************************************/

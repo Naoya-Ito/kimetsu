@@ -33,6 +33,8 @@
 		CE00A327241E14A700A9DC08 /* WorldNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00A326241E14A700A9DC08 /* WorldNode.swift */; };
 		CE7F2420242519C60072C2DD /* Tutorial3Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F241F242519C60072C2DD /* Tutorial3Scene.swift */; };
 		CE7F2422242519EE0072C2DD /* Tutorial3Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = CE7F2421242519EE0072C2DD /* Tutorial3Scene.sks */; };
+		CE7F24252425B0120072C2DD /* snow.sks in Resources */ = {isa = PBXBuildFile; fileRef = CE7F24232425B0120072C2DD /* snow.sks */; };
+		CE7F24282425D9A80072C2DD /* SnowEmitterNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F24272425D9A80072C2DD /* SnowEmitterNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		CE00A326241E14A700A9DC08 /* WorldNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldNode.swift; sourceTree = "<group>"; };
 		CE7F241F242519C60072C2DD /* Tutorial3Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial3Scene.swift; sourceTree = "<group>"; };
 		CE7F2421242519EE0072C2DD /* Tutorial3Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tutorial3Scene.sks; sourceTree = "<group>"; };
+		CE7F24232425B0120072C2DD /* snow.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = snow.sks; sourceTree = "<group>"; };
+		CE7F24272425D9A80072C2DD /* SnowEmitterNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowEmitterNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				CE00A310241DE6B100A9DC08 /* fire.sks */,
+				CE7F24232425B0120072C2DD /* snow.sks */,
 				CE00A320241E015E00A9DC08 /* spark.sks */,
 			);
 			path = particles;
@@ -169,6 +174,7 @@
 			children = (
 				CE00A313241DEE3B00A9DC08 /* FireEmitterNode.swift */,
 				CE00A324241E018E00A9DC08 /* SparkEmitterNode.swift */,
+				CE7F24272425D9A80072C2DD /* SnowEmitterNode.swift */,
 			);
 			path = emitters;
 			sourceTree = "<group>";
@@ -243,6 +249,7 @@
 			files = (
 				CE00A2EB241D002800A9DC08 /* Main.storyboard in Resources */,
 				CE7F2422242519EE0072C2DD /* Tutorial3Scene.sks in Resources */,
+				CE7F24252425B0120072C2DD /* snow.sks in Resources */,
 				CE00A30B241DD8DC00A9DC08 /* Tutorial1Scene.sks in Resources */,
 				CE00A2E2241D002800A9DC08 /* GameScene.sks in Resources */,
 				CE00A2ED241D002D00A9DC08 /* Assets.xcassets in Resources */,
@@ -269,6 +276,7 @@
 				CE7F2420242519C60072C2DD /* Tutorial3Scene.swift in Sources */,
 				CE00A327241E14A700A9DC08 /* WorldNode.swift in Sources */,
 				CE00A2E8241D002800A9DC08 /* GameViewController.swift in Sources */,
+				CE7F24282425D9A80072C2DD /* SnowEmitterNode.swift in Sources */,
 				CE00A325241E018E00A9DC08 /* SparkEmitterNode.swift in Sources */,
 				CE00A2E0241D002800A9DC08 /* AppDelegate.swift in Sources */,
 				CE00A301241D272100A9DC08 /* TitleScene.swift in Sources */,
