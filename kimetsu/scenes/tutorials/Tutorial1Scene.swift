@@ -32,6 +32,9 @@ class Tutorial1Scene: BaseScene {
         view!.presentScene(nextScene, transition: .doorway(withDuration: 1.3))
     }
 
+    /**************************************************************************/
+    /************************ tap             ******************************************/
+    /**************************************************************************/
     override func touchDown(atPoint pos : CGPoint) {
         if pos.x < 0 {
             if kappa.pos <= 0 {

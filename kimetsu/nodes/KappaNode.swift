@@ -96,9 +96,14 @@ class KappaNode : SKSpriteNode {
         let images = ["kappa_punch", "kappa_upper", "kappa_kick", "kappa_body", "kappa_punch_r", "kappa_flying"]
         let image = images[CommonUtil.rnd(images.count)]
         texture = SKTexture(imageNamed: image)
-        
         run(normalAttackAnimation, completion: {
             self.isMoving = false
         })
+    }
+    
+    // 波動の構え
+    public func hado(){
+        xScale = 1
+        texture = SKTexture(imageNamed: "kappa_punch")
     }
 }

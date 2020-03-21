@@ -11,5 +11,4 @@ class WorldNode : SKShapeNode {
         physicsBody?.affectedByGravity = false
         physicsBody?.isDynamic = false
     }
-    
 }

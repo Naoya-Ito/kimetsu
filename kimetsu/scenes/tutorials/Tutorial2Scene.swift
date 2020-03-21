@@ -4,7 +4,7 @@ import GameplayKit
 class Tutorial2Scene: BaseScene {
     
     private var enemy : EnemyNode = EnemyNode()
-    private let ENEMY_POSITION = 3
+    private let ENEMY_POSITION = 4
 
     override func sceneDidLoad() {
         commonSceneDidLoad()
@@ -21,14 +21,28 @@ class Tutorial2Scene: BaseScene {
         self.addChild(fire)
     }
     
+    private func damagedEnemy(){
+        let damage = 1 + CommonUtil.rnd(3)
+        enemy.hp -= damage
+        displayDamage("\(damage)", enemy.positionTop())
+        makeSpark(enemy.rndPos())
+        if enemy.hp <= 0 {
+            enemy.beatAway()
+        }
+    }
+    
     private func addEnemy(){
         enemy = EnemyNode(imageNamed: "tanuki")
         enemy.setPhysic()
-        enemy.position.x = kappa.position.x + (self.size.width)/7.0*3 + Const.ENEMY_SPACE
+        enemy.hp = 20
+        enemy.position.x = kappa.position.x + (self.size.width)/7.0*ENEMY_POSITION + Const.ENEMY_SPACE
         enemy.position.y = kappa.position.y
         self.addChild(enemy)
     }
     
+    /**************************************************************************/
+    /************************ 遷移             *****************************************/
+    /**************************************************************************/
     private func goNextTutorial(){
         if onceFlag {
             return
@@ -41,6 +55,9 @@ class Tutorial2Scene: BaseScene {
         view!.presentScene(nextScene, transition: .doorway(withDuration: 1.3))
     }
     
+    /**************************************************************************/
+    /************************ tap             ******************************************/
+    /**************************************************************************/
     override func touchDown(atPoint pos : CGPoint) {
         if pos.x < 0 {
             if kappa.pos <= 0 {
@@ -52,13 +69,7 @@ class Tutorial2Scene: BaseScene {
             if kappa.pos == ENEMY_POSITION - 1 {
                 if enemy.hp > 0 {
                     kappa.normalAttack()
-                    let damage = 1 + CommonUtil.rnd(3)
-                    enemy.hp -= damage
-                    displayDamage("\(damage)", enemy.positionTop())
-                    makeSpark(enemy.rndPos())
-                    if enemy.hp <= 0 {
-                        enemy.beatAway()
-                    }
+                    damagedEnemy()
                     return
                 }
             }

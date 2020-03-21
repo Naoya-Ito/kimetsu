@@ -13,9 +13,9 @@ class EnemyNode : SKSpriteNode {
         physic.affectedByGravity = false
         physic.allowsRotation = true
         physic.isDynamic = true
-//        physic.categoryBitMask = Const.kappaCategory
-//        physic.contactTestBitMask = Const.fireCategory | Const.enemyCategory | Const.thunderCategory | Const.busterEnemyCategory
-//        physic.collisionBitMask = 0
+        physic.categoryBitMask = Const.enemyCategory
+        physic.contactTestBitMask = Const.hadoCategory
+        physic.collisionBitMask = 0
         physic.linearDamping = 0
         physic.friction = 0
         physicsBody = physic
