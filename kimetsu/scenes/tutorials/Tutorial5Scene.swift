@@ -25,11 +25,12 @@ class Tutorial5Scene: BaseScene {
     }
     
     private func addEnemy(){
-        enemy = EnemyNode(imageNamed: "death")
+        enemy = EnemyNode(imageNamed: "buffalo")
         enemy.setPhysic()
         let pos = CGFloat(ENEMY_POSITION)
         enemy.position.x = kappa.position.x + (self.size.width)/7.0*pos + Const.ENEMY_SPACE
         enemy.position.y = kappa.position.y
+        enemy.buffaloMove()
         self.addChild(enemy)
     }
     
@@ -89,8 +90,13 @@ class Tutorial5Scene: BaseScene {
 
         if firstBody.categoryBitMask & Const.kappaCategory != 0 {
             if secondBody.categoryBitMask & Const.enemyCategory != 0 {
-                if kappa.kappaMode == "upper" {
+                switch kappa.kappaMode {
+                case "upper":
                     damagedEnemy()
+                case "tornado":
+                    damagedEnemy()
+                default:
+                    break
                 }
             }
         }
@@ -110,6 +116,9 @@ class Tutorial5Scene: BaseScene {
                     return
                 case "upper":
                     kappa.upper()
+                    return
+                case "tornado":
+                    kappa.tornado()
                     return
                 default:
                     break

@@ -20,6 +20,7 @@ class BaseScene: SKScene, SKPhysicsContactDelegate {
     public func setKappa(){
         kappa = self.childNode(withName: "//kappa") as! KappaNode
         kappa.setScreenInfo(sceneWidth : self.scene!.size.width)
+        kappa.setPhysic()
     }
     
     public func makeSpark(_ pos : CGPoint){
@@ -67,7 +68,7 @@ class BaseScene: SKScene, SKPhysicsContactDelegate {
         label.text = text
         label.fontSize = 46
         label.fontColor = color
-        label.horizontalAlignmentMode = .center        
+        label.horizontalAlignmentMode = .center
         label.position = pos
 
         let animation = SKAction.sequence([

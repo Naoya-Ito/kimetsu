@@ -16,5 +16,6 @@ class DoorNode : SKSpriteNode {
             SKAction.fadeOut(withDuration: 2.0),
             SKAction.removeFromParent()
         ])
+        run(action)
     }
 }

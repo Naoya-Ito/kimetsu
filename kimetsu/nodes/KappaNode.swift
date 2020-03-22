@@ -110,9 +110,11 @@ class KappaNode : SKSpriteNode {
         isMoving = true
         xScale = 1
         
-        let images = ["kappa_punch", "kappa_upper", "kappa_kick", "kappa_body", "kappa_punch_r", "kappa_flying"]
-        let image = images[CommonUtil.rnd(images.count)]
-        texture = SKTexture(imageNamed: image)
+        if kappaMode != "tornado" {
+            let images = ["kappa_punch", "kappa_upper", "kappa_kick", "kappa_body", "kappa_punch_r", "kappa_flying"]
+            let image = images[CommonUtil.rnd(images.count)]
+            texture = SKTexture(imageNamed: image)
+        }
         run(normalAttackAnimation, completion: {
             self.isMoving = false
         })
@@ -139,8 +141,40 @@ class KappaNode : SKSpriteNode {
         })
     }
     
+    public func tornado(){
+        if kappaMode == "tornado" {
+            return
+        }
+        
+        kappaMode = "tornado"
+        texture = SKTexture(imageNamed: "kappa_kick")
+        
+        spin_count = 0
+        spin()
+        let action = SKAction.sequence([
+            SKAction.moveBy(x: 0,  y: 50, duration: 0.25),
+            SKAction.wait(forDuration: 3.0),
+            SKAction.moveBy(x: 0,  y: -50, duration:0.25),
+        ])
+        
+        run(action, completion: {
+            self.kappaMode = "normal"
+        })
+    }
+    
+    public var spin_count = 0
+    public func spin(){
+        _ = CommonUtil.setTimeout(delay: 0.25, block: {
+            self.spin_count += 1
+            self.xScale *= -1
+            if self.spin_count >= 20 {
+                self.spin()
+            }
+        })
+    }
+    
+    
     public func positionRight() -> CGPoint {
         return CGPoint(x: position.x + 60, y: position.y)
-        
     }
 }

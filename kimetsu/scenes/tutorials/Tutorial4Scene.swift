@@ -68,7 +68,15 @@ class Tutorial4Scene: BaseScene {
     /************************ 遷移             *****************************************/
     /**************************************************************************/
     private func goNextTutorial(){
-        
+        if onceFlag {
+            return
+        }
+        onceFlag = true
+
+        let nextScene = Tutorial5Scene(fileNamed: "Tutorial5Scene")!
+        nextScene.size = self.scene!.size
+        nextScene.scaleMode = SKSceneScaleMode.aspectFit
+        view!.presentScene(nextScene, transition: .doorway(withDuration: 1.3))
     }
     
     /***********************************************************************************/
@@ -89,9 +97,12 @@ class Tutorial4Scene: BaseScene {
 
         if firstBody.categoryBitMask & Const.kappaCategory != 0 {
             if secondBody.categoryBitMask & Const.enemyCategory != 0 {
+                print("upper hit")
                 if kappa.kappaMode == "upper" {
+                    print("a")
                     damagedEnemy()
                 }
+                print("b")
             }
         }
     }

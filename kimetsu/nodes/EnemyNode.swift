@@ -49,4 +49,22 @@ class EnemyNode : SKSpriteNode {
         
         return top_pos
     }
+    
+    public func buffaloMove(){
+        let action = SKAction.sequence([
+            SKAction.moveBy(x: 20.0, y: 30.0, duration: 0.25),
+            SKAction.moveBy(x: 20.0, y: -30.0, duration: 0.25),
+            SKAction.moveTo(x: -250.0, duration: 0.75)
+        ])
+        let backAction = SKAction.sequence([
+            SKAction.moveBy(x: -20.0, y: 30.0, duration: 0.25),
+            SKAction.moveBy(x: -20.0, y: -30.0, duration: 0.25),
+            SKAction.moveTo(x: 250.0, duration: 0.75)
+        ])
+
+        run(action, completion: {
+            self.xScale = -1
+            self.run(backAction, completion: self.buffaloMove)
+        })
+    }
 }

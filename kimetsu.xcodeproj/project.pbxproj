@@ -42,6 +42,7 @@
 		CE7F243624273C080072C2DD /* Tutorial4Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F243524273C080072C2DD /* Tutorial4Scene.swift */; };
 		CE7F2438242740010072C2DD /* DoorNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F2437242740010072C2DD /* DoorNode.swift */; };
 		CE7F243A2427543B0072C2DD /* Tutorial5Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F24392427543B0072C2DD /* Tutorial5Scene.swift */; };
+		CE7F243C2427575D0072C2DD /* Tutorial5Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = CE7F243B2427575D0072C2DD /* Tutorial5Scene.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		CE7F243524273C080072C2DD /* Tutorial4Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial4Scene.swift; sourceTree = "<group>"; };
 		CE7F2437242740010072C2DD /* DoorNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorNode.swift; sourceTree = "<group>"; };
 		CE7F24392427543B0072C2DD /* Tutorial5Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial5Scene.swift; sourceTree = "<group>"; };
+		CE7F243B2427575D0072C2DD /* Tutorial5Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tutorial5Scene.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				CE00A31C241DF37B00A9DC08 /* Tutorial2Scene.sks */,
 				CE7F2421242519EE0072C2DD /* Tutorial3Scene.sks */,
 				CE7F243324273B700072C2DD /* Tutorial4Scene.sks */,
+				CE7F243B2427575D0072C2DD /* Tutorial5Scene.sks */,
 				CE00A2E1241D002800A9DC08 /* GameScene.sks */,
 				CE00A2E3241D002800A9DC08 /* Actions.sks */,
 			);
@@ -276,6 +279,7 @@
 				CE00A2E2241D002800A9DC08 /* GameScene.sks in Resources */,
 				CE00A2ED241D002D00A9DC08 /* Assets.xcassets in Resources */,
 				CE00A2F0241D002D00A9DC08 /* LaunchScreen.storyboard in Resources */,
+				CE7F243C2427575D0072C2DD /* Tutorial5Scene.sks in Resources */,
 				CE00A311241DE6B100A9DC08 /* fire.sks in Resources */,
 				CE00A2E4241D002800A9DC08 /* Actions.sks in Resources */,
 				CE00A303241D292100A9DC08 /* TitleScene.sks in Resources */,
