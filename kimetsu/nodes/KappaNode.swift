@@ -6,11 +6,28 @@ class KappaNode : SKSpriteNode {
     private var isMoving = false
     public var pos = 0
     
+    public var kappaMode = "normal"
+    
     private var moveSpeed : TimeInterval = 0.07
     private var moveSpace : CGFloat = 0.0
     private var jumpSpace : CGFloat = 25.0
     
-    
+    // 物理属性を適用
+    public func setPhysic(){
+        let centerPoint = CGPoint(x: 0, y: 64)
+        let p_size = self.texture!.size()
+        let physic = SKPhysicsBody(rectangleOf: p_size, center: centerPoint)
+        physic.affectedByGravity = false
+        physic.allowsRotation = true
+        physic.isDynamic = true
+        physic.categoryBitMask = Const.kappaCategory
+        physic.contactTestBitMask = Const.enemyCategory
+        physic.collisionBitMask = 0
+        physic.linearDamping = 0
+        physic.friction = 0
+        physicsBody = physic
+    }
+
     // 画面情報やスキルで初期値をセット
     private var moveRightAnimation : SKAction!
     private var moveLeftAnimation : SKAction!
@@ -105,6 +122,21 @@ class KappaNode : SKSpriteNode {
     public func hado(){
         xScale = 1
         texture = SKTexture(imageNamed: "kappa_punch")
+    }
+    
+    public func upper(){
+        xScale = 1
+        texture = SKTexture(imageNamed: "kappa_upper")
+        kappaMode = "upper"
+        let upperAction = SKAction.sequence([
+            SKAction.moveBy(x: 60, y: 250, duration: 0.25),
+            SKAction.moveBy(x: 0,  y: -250, duration:0.25),
+            SKAction.moveBy(x: -60, y: 0,  duration: 0.25),
+            ])
+        
+        run(upperAction, completion: {
+            self.kappaMode = "normal"
+        })
     }
     
     public func positionRight() -> CGPoint {

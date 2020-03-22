@@ -38,6 +38,10 @@
 		CE7F242B2425EE2D0072C2DD /* magick.sks in Resources */ = {isa = PBXBuildFile; fileRef = CE7F24292425EE2D0072C2DD /* magick.sks */; };
 		CE7F242E2425EF220072C2DD /* HadoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F242D2425EF220072C2DD /* HadoNode.swift */; };
 		CE7F24302425F2110072C2DD /* HadoEmitterNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F242F2425F2110072C2DD /* HadoEmitterNode.swift */; };
+		CE7F243424273B700072C2DD /* Tutorial4Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = CE7F243324273B700072C2DD /* Tutorial4Scene.sks */; };
+		CE7F243624273C080072C2DD /* Tutorial4Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F243524273C080072C2DD /* Tutorial4Scene.swift */; };
+		CE7F2438242740010072C2DD /* DoorNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F2437242740010072C2DD /* DoorNode.swift */; };
+		CE7F243A2427543B0072C2DD /* Tutorial5Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F24392427543B0072C2DD /* Tutorial5Scene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +78,10 @@
 		CE7F24292425EE2D0072C2DD /* magick.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = magick.sks; sourceTree = "<group>"; };
 		CE7F242D2425EF220072C2DD /* HadoNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HadoNode.swift; sourceTree = "<group>"; };
 		CE7F242F2425F2110072C2DD /* HadoEmitterNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HadoEmitterNode.swift; sourceTree = "<group>"; };
+		CE7F243324273B700072C2DD /* Tutorial4Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tutorial4Scene.sks; sourceTree = "<group>"; };
+		CE7F243524273C080072C2DD /* Tutorial4Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial4Scene.swift; sourceTree = "<group>"; };
+		CE7F2437242740010072C2DD /* DoorNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorNode.swift; sourceTree = "<group>"; };
+		CE7F24392427543B0072C2DD /* Tutorial5Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial5Scene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +137,7 @@
 				CE00A30A241DD8DC00A9DC08 /* Tutorial1Scene.sks */,
 				CE00A31C241DF37B00A9DC08 /* Tutorial2Scene.sks */,
 				CE7F2421242519EE0072C2DD /* Tutorial3Scene.sks */,
+				CE7F243324273B700072C2DD /* Tutorial4Scene.sks */,
 				CE00A2E1241D002800A9DC08 /* GameScene.sks */,
 				CE00A2E3241D002800A9DC08 /* Actions.sks */,
 			);
@@ -161,6 +170,7 @@
 				CE00A306241DD2C600A9DC08 /* KappaNode.swift */,
 				CE7F242D2425EF220072C2DD /* HadoNode.swift */,
 				CE00A31E241DFD2400A9DC08 /* EnemyNode.swift */,
+				CE7F2437242740010072C2DD /* DoorNode.swift */,
 				CE00A326241E14A700A9DC08 /* WorldNode.swift */,
 			);
 			path = nodes;
@@ -194,6 +204,8 @@
 				CE00A308241DD82900A9DC08 /* Tutorial1Scene.swift */,
 				CE00A318241DF33B00A9DC08 /* Tutorial2Scene.swift */,
 				CE7F241F242519C60072C2DD /* Tutorial3Scene.swift */,
+				CE7F243524273C080072C2DD /* Tutorial4Scene.swift */,
+				CE7F24392427543B0072C2DD /* Tutorial5Scene.swift */,
 			);
 			path = tutorials;
 			sourceTree = "<group>";
@@ -257,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE00A2EB241D002800A9DC08 /* Main.storyboard in Resources */,
+				CE7F243424273B700072C2DD /* Tutorial4Scene.sks in Resources */,
 				CE7F2422242519EE0072C2DD /* Tutorial3Scene.sks in Resources */,
 				CE7F24252425B0120072C2DD /* snow.sks in Resources */,
 				CE00A30B241DD8DC00A9DC08 /* Tutorial1Scene.sks in Resources */,
@@ -281,6 +294,8 @@
 			files = (
 				CE7F24302425F2110072C2DD /* HadoEmitterNode.swift in Sources */,
 				CE00A2E6241D002800A9DC08 /* GameScene.swift in Sources */,
+				CE7F243624273C080072C2DD /* Tutorial4Scene.swift in Sources */,
+				CE7F2438242740010072C2DD /* DoorNode.swift in Sources */,
 				CE00A319241DF33B00A9DC08 /* Tutorial2Scene.swift in Sources */,
 				CE00A307241DD2C600A9DC08 /* KappaNode.swift in Sources */,
 				CE00A30D241DDD0900A9DC08 /* CommonUtil.swift in Sources */,
@@ -290,6 +305,7 @@
 				CE7F24282425D9A80072C2DD /* SnowEmitterNode.swift in Sources */,
 				CE00A325241E018E00A9DC08 /* SparkEmitterNode.swift in Sources */,
 				CE00A2E0241D002800A9DC08 /* AppDelegate.swift in Sources */,
+				CE7F243A2427543B0072C2DD /* Tutorial5Scene.swift in Sources */,
 				CE7F242E2425EF220072C2DD /* HadoNode.swift in Sources */,
 				CE00A301241D272100A9DC08 /* TitleScene.swift in Sources */,
 				CE00A314241DEE3B00A9DC08 /* FireEmitterNode.swift in Sources */,

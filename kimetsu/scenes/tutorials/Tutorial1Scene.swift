@@ -14,6 +14,7 @@ class Tutorial1Scene: BaseScene {
         let fire_light = self.childNode(withName: "//fire_light") as! SKLightNode
         let fire = FireEmitterNode.makeFire()
         fire.position = fire_light.position
+        fire.zPosition = 99
         self.addChild(fire)
     }
     

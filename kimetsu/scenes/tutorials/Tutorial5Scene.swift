@@ -1,10 +1,12 @@
 import Foundation
 import SpriteKit
 import GameplayKit
-class Tutorial3Scene: BaseScene {
+class Tutorial5Scene: BaseScene {
     
     private var enemy : EnemyNode = EnemyNode()
+    private var door : DoorNode = DoorNode()
     private let ENEMY_POSITION = 4
+    private let DOOR_POSITION = 5
 
     override func sceneDidLoad() {
         commonSceneDidLoad()
@@ -12,6 +14,7 @@ class Tutorial3Scene: BaseScene {
         setWorld()
         addFire()
         addEnemy()
+        addDoor()
     }
     
     private func addFire(){
@@ -22,7 +25,7 @@ class Tutorial3Scene: BaseScene {
     }
     
     private func addEnemy(){
-        enemy = EnemyNode(imageNamed: "ghost")
+        enemy = EnemyNode(imageNamed: "death")
         enemy.setPhysic()
         let pos = CGFloat(ENEMY_POSITION)
         enemy.position.x = kappa.position.x + (self.size.width)/7.0*pos + Const.ENEMY_SPACE
@@ -30,6 +33,14 @@ class Tutorial3Scene: BaseScene {
         self.addChild(enemy)
     }
     
+    private func addDoor(){
+        door = DoorNode(imageNamed: "door")
+        door.setPhysic()
+        let pos = CGFloat(DOOR_POSITION)
+        door.position.x = kappa.position.x + (self.size.width)/7.0*pos + Const.ENEMY_SPACE
+        door.position.y = kappa.position.y
+        self.addChild(door)
+    }
     
     private func shot(){
         let hado = HadoNode.makeHado()
@@ -44,23 +55,20 @@ class Tutorial3Scene: BaseScene {
         displayDamage("\(damage)", enemy.positionTop())
         makeSpark(enemy.rndPos())
         if enemy.hp <= 0 {
-            enemy.beatAway()
+            beatEnemy()
         }
+    }
+    
+    private func beatEnemy(){
+        enemy.beatAway()
+        door.fadeAway()
     }
     
     /**************************************************************************/
     /************************ 遷移             *****************************************/
     /**************************************************************************/
     private func goNextTutorial(){
-        if onceFlag {
-            return
-        }
-        onceFlag = true
-
-        let nextScene = Tutorial4Scene(fileNamed: "Tutorial4Scene")!
-        nextScene.size = self.scene!.size
-        nextScene.scaleMode = SKSceneScaleMode.aspectFit
-        view!.presentScene(nextScene, transition: .doorway(withDuration: 1.3))
+        
     }
     
     /***********************************************************************************/
@@ -80,12 +88,10 @@ class Tutorial3Scene: BaseScene {
         }
 
         if firstBody.categoryBitMask & Const.kappaCategory != 0 {
-        } else if firstBody.categoryBitMask & Const.enemyCategory != 0 {
-            print("is enemy hit")
-            
-            if secondBody.categoryBitMask & Const.hadoCategory != 0 {
-                damagedEnemy()
-                secondBody.node?.removeFromParent()
+            if secondBody.categoryBitMask & Const.enemyCategory != 0 {
+                if kappa.kappaMode == "upper" {
+                    damagedEnemy()
+                }
             }
         }
     }
@@ -102,6 +108,9 @@ class Tutorial3Scene: BaseScene {
                     kappa.hado()
                     shot()
                     return
+                case "upper":
+                    kappa.upper()
+                    return
                 default:
                     break
                 }
@@ -115,10 +124,9 @@ class Tutorial3Scene: BaseScene {
                 kappa.moveLeft()
             }
         } else {
-            if kappa.pos == ENEMY_POSITION - 1 {
+            if kappa.pos == DOOR_POSITION - 1 {
                 if enemy.hp > 0 {
                     kappa.normalAttack()
-                    displayDamage("Miss", enemy.positionTop())
                     return
                 }
             }
