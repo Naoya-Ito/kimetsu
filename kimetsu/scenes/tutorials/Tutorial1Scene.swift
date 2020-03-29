@@ -1,3 +1,4 @@
+// チュートリアル1 移動
 import Foundation
 import SpriteKit
 import GameplayKit
@@ -27,6 +28,8 @@ class Tutorial1Scene: BaseScene {
         }
         onceFlag = true
 
+        UserDefaults.standard.set(true, forKey: "is_clear_tutorial1")
+        
         let nextScene = Tutorial2Scene(fileNamed: "Tutorial2Scene")!
         nextScene.size = self.scene!.size
         nextScene.scaleMode = SKSceneScaleMode.aspectFit

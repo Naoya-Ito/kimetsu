@@ -5,8 +5,18 @@ class EnemyNode : SKSpriteNode {
     
     public var hp = 10
     
+    public func setLight(){
+        let light = SKLightNode()
+        light.falloff = 1.5
+
+        light.categoryBitMask = 1
+        light.position = CGPoint(x: 0, y: 0)
+        self.addChild(light)
+    }
+    
+    
     // 物理属性を適用
-    func setPhysic(){
+    public func setPhysic(){
         let centerPoint = CGPoint(x: 0, y: 64)
         let p_size = self.texture!.size()
         let physic = SKPhysicsBody(rectangleOf: p_size, center: centerPoint)

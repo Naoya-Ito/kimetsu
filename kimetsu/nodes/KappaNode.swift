@@ -127,36 +127,39 @@ class KappaNode : SKSpriteNode {
     }
     
     public func upper(){
+        if isRunnningAction() {
+            return
+        }
+
         xScale = 1
         texture = SKTexture(imageNamed: "kappa_upper")
         kappaMode = "upper"
+
         let upperAction = SKAction.sequence([
             SKAction.moveBy(x: 60, y: 250, duration: 0.25),
             SKAction.moveBy(x: 0,  y: -250, duration:0.25),
             SKAction.moveBy(x: -60, y: 0,  duration: 0.25),
             ])
-        
+        spin(8)
         run(upperAction, completion: {
             self.kappaMode = "normal"
         })
     }
     
     public func tornado(){
-        if kappaMode == "tornado" {
+        if isRunnningAction() {
             return
         }
         
         kappaMode = "tornado"
         texture = SKTexture(imageNamed: "kappa_kick")
-        
         spin_count = 0
-        spin(20)
+        spin(50)
         let action = SKAction.sequence([
             SKAction.moveBy(x: 0,  y: 50, duration: 0.25),
             SKAction.wait(forDuration: 3.0),
             SKAction.moveBy(x: 0,  y: -50, duration:0.25),
         ])
-        
         run(action, completion: {
             self.kappaMode = "normal"
         })
@@ -164,7 +167,7 @@ class KappaNode : SKSpriteNode {
     
     public var spin_count = 0
     public func spin(_ max_spin : Int){
-        _ = CommonUtil.setTimeout(delay: 0.25, block: {
+        _ = CommonUtil.setTimeout(delay: 0.1, block: {
             self.spin_count += 1
             self.xScale *= -1
             if self.spin_count <= max_spin {
@@ -172,7 +175,6 @@ class KappaNode : SKSpriteNode {
             }
         })
     }
-    
     
     public func beDamaged(){
         kappaMode = "beat"
@@ -191,5 +193,10 @@ class KappaNode : SKSpriteNode {
     
     public func positionRight() -> CGPoint {
         return CGPoint(x: position.x + 60, y: position.y)
+    }
+    
+    
+    public func isRunnningAction() -> Bool {
+        return kappaMode == "tornado" || kappaMode == "upper"
     }
 }

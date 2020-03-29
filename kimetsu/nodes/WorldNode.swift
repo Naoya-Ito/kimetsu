@@ -2,7 +2,7 @@
 import Foundation
 import SpriteKit
 
-class WorldNode : SKShapeNode {
+class WorldNode : SKSpriteNode {
     
     // 物理属性を適用
     public func setPhysic(){

@@ -1,3 +1,4 @@
+// チュートリアル2 攻撃
 import Foundation
 import SpriteKit
 import GameplayKit
@@ -50,6 +51,8 @@ class Tutorial2Scene: BaseScene {
         }
         onceFlag = true
 
+        UserDefaults.standard.set(true, forKey: "is_clear_tutorial2")
+        
         let nextScene = Tutorial3Scene(fileNamed: "Tutorial3Scene")!
         nextScene.size = self.scene!.size
         nextScene.scaleMode = SKSceneScaleMode.aspectFit

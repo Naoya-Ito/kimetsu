@@ -1,3 +1,4 @@
+// チュートリアル3 波動
 import Foundation
 import SpriteKit
 import GameplayKit
@@ -57,6 +58,8 @@ class Tutorial3Scene: BaseScene {
         }
         onceFlag = true
 
+        UserDefaults.standard.set(true, forKey: "is_clear_tutorial3")
+        
         let nextScene = Tutorial4Scene(fileNamed: "Tutorial4Scene")!
         nextScene.size = self.scene!.size
         nextScene.scaleMode = SKSceneScaleMode.aspectFit
@@ -81,8 +84,6 @@ class Tutorial3Scene: BaseScene {
 
         if firstBody.categoryBitMask & Const.kappaCategory != 0 {
         } else if firstBody.categoryBitMask & Const.enemyCategory != 0 {
-            print("is enemy hit")
-            
             if secondBody.categoryBitMask & Const.hadoCategory != 0 {
                 damagedEnemy()
                 secondBody.node?.removeFromParent()

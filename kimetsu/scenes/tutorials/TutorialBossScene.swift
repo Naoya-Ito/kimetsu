@@ -1,8 +1,8 @@
-// チュートリアル5  竜巻旋風脚
+// チュートリアルボス 竜巻旋風脚
 import Foundation
 import SpriteKit
 import GameplayKit
-class Tutorial5Scene: BaseScene {
+class TutorialBossScene: BaseScene {
     
     private var enemy : EnemyNode = EnemyNode()
     private var door : DoorNode = DoorNode()
@@ -26,7 +26,7 @@ class Tutorial5Scene: BaseScene {
     }
     
     private func addEnemy(){
-        enemy = EnemyNode(imageNamed: "buffalo")
+        enemy = EnemyNode(imageNamed: "cat")
         enemy.setPhysic()
         let pos = CGFloat(ENEMY_POSITION)
         enemy.position.x = kappa.position.x + (self.size.width)/7.0*pos + Const.ENEMY_SPACE
@@ -75,8 +75,6 @@ class Tutorial5Scene: BaseScene {
         }
         onceFlag = true
 
-        UserDefaults.standard.set(true, forKey: "is_clear_tutorial5")
-        
         let nextScene = StoryScene(fileNamed: "StoryScene")!
         nextScene.size = self.scene!.size
         nextScene.scaleMode = SKSceneScaleMode.aspectFit

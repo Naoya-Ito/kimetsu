@@ -1,3 +1,4 @@
+// チュートリアル4  昇竜拳
 import Foundation
 import SpriteKit
 import GameplayKit
@@ -73,9 +74,12 @@ class Tutorial4Scene: BaseScene {
         }
         onceFlag = true
 
-        let nextScene = Tutorial5Scene(fileNamed: "Tutorial5Scene")!
+        UserDefaults.standard.set(true, forKey: "is_clear_tutorial4")
+        
+        let nextScene = StoryScene(fileNamed: "StoryScene")!
         nextScene.size = self.scene!.size
         nextScene.scaleMode = SKSceneScaleMode.aspectFit
+        nextScene.key = "tutorial"
         view!.presentScene(nextScene, transition: .doorway(withDuration: 1.3))
     }
     
