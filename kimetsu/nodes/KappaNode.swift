@@ -111,7 +111,7 @@ class KappaNode : SKSpriteNode {
         xScale = 1
         
         if kappaMode != "tornado" {
-            let images = ["kappa_punch", "kappa_upper", "kappa_kick", "kappa_body", "kappa_punch_r", "kappa_flying"]
+            let images = ["kappa_punch", "kappa_upper", "kappa_kick", "kappa_body", "kappa_punch_r", "kappa_flying", "kappa_walk"]
             let image = images[CommonUtil.rnd(images.count)]
             texture = SKTexture(imageNamed: image)
         }
@@ -150,7 +150,7 @@ class KappaNode : SKSpriteNode {
         texture = SKTexture(imageNamed: "kappa_kick")
         
         spin_count = 0
-        spin()
+        spin(20)
         let action = SKAction.sequence([
             SKAction.moveBy(x: 0,  y: 50, duration: 0.25),
             SKAction.wait(forDuration: 3.0),
@@ -163,13 +163,28 @@ class KappaNode : SKSpriteNode {
     }
     
     public var spin_count = 0
-    public func spin(){
+    public func spin(_ max_spin : Int){
         _ = CommonUtil.setTimeout(delay: 0.25, block: {
             self.spin_count += 1
             self.xScale *= -1
-            if self.spin_count >= 20 {
-                self.spin()
+            if self.spin_count <= max_spin {
+                self.spin(max_spin)
             }
+        })
+    }
+    
+    
+    public func beDamaged(){
+        kappaMode = "beat"
+        texture = SKTexture(imageNamed: "kappa_beat")
+        let action = SKAction.sequence([
+            SKAction.moveBy(x: -30,  y: 60, duration: 0.7),
+            SKAction.moveBy(x: 0,  y: -60, duration:0.3),
+            SKAction.moveBy(x: 30,  y: 0, duration:0.3),
+        ])
+        run(action, completion: {
+            self.texture = SKTexture(imageNamed: "kappa")
+            self.kappaMode = "normal"
         })
     }
     

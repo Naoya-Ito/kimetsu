@@ -1,12 +1,10 @@
 import Foundation
 import SpriteKit
 import GameplayKit
-class Tutorial4Scene: BaseScene {
+class TutorialLastScene: BaseScene {
     
     private var enemy : EnemyNode = EnemyNode()
-    private var door : DoorNode = DoorNode()
-    private let ENEMY_POSITION = 4
-    private let DOOR_POSITION = 5
+    private let ENEMY_POSITION = 5
 
     override func sceneDidLoad() {
         commonSceneDidLoad()
@@ -14,7 +12,6 @@ class Tutorial4Scene: BaseScene {
         setWorld()
         addFire()
         addEnemy()
-        addDoor()
     }
     
     private func addFire(){
@@ -25,21 +22,13 @@ class Tutorial4Scene: BaseScene {
     }
     
     private func addEnemy(){
-        enemy = EnemyNode(imageNamed: "death")
+        enemy = EnemyNode(imageNamed: "usagi")
         enemy.setPhysic()
         let pos = CGFloat(ENEMY_POSITION)
         enemy.position.x = kappa.position.x + (self.size.width)/7.0*pos + Const.ENEMY_SPACE
-        enemy.position.y = kappa.position.y + 220
+        enemy.position.y = kappa.position.y
+        enemy.buffaloMove()
         self.addChild(enemy)
-    }
-    
-    private func addDoor(){
-        door = DoorNode(imageNamed: "door")
-        door.setPhysic()
-        let pos = CGFloat(DOOR_POSITION)
-        door.position.x = kappa.position.x + (self.size.width)/7.0*pos + Const.ENEMY_SPACE
-        door.position.y = kappa.position.y
-        self.addChild(door)
     }
     
     private func shot(){
@@ -61,22 +50,13 @@ class Tutorial4Scene: BaseScene {
     
     private func beatEnemy(){
         enemy.beatAway()
-        door.fadeAway()
     }
     
     /**************************************************************************/
     /************************ 遷移             *****************************************/
     /**************************************************************************/
     private func goNextTutorial(){
-        if onceFlag {
-            return
-        }
-        onceFlag = true
-
-        let nextScene = Tutorial5Scene(fileNamed: "Tutorial5Scene")!
-        nextScene.size = self.scene!.size
-        nextScene.scaleMode = SKSceneScaleMode.aspectFit
-        view!.presentScene(nextScene, transition: .doorway(withDuration: 1.3))
+        
     }
     
     /***********************************************************************************/
@@ -97,8 +77,15 @@ class Tutorial4Scene: BaseScene {
 
         if firstBody.categoryBitMask & Const.kappaCategory != 0 {
             if secondBody.categoryBitMask & Const.enemyCategory != 0 {
-                if kappa.kappaMode == "upper" {
+                switch kappa.kappaMode {
+                case "upper":
                     damagedEnemy()
+                case "tornado":
+                    damagedEnemy()
+                case "beat":
+                    break
+                default:
+                    kappa.beDamaged()
                 }
             }
         }
@@ -108,6 +95,9 @@ class Tutorial4Scene: BaseScene {
     /************************ tap             ******************************************/
     /**************************************************************************/
     override func touchDown(atPoint pos : CGPoint) {
+        if kappa.kappaMode == "beat" {
+            return
+        }
         let tapNodes = self.nodes(at: pos)
         for tapNode in tapNodes {
             if let name = tapNode.name {
@@ -118,6 +108,9 @@ class Tutorial4Scene: BaseScene {
                     return
                 case "upper":
                     kappa.upper()
+                    return
+                case "tornado":
+                    kappa.tornado()
                     return
                 default:
                     break
@@ -132,13 +125,6 @@ class Tutorial4Scene: BaseScene {
                 kappa.moveLeft()
             }
         } else {
-            if kappa.pos == DOOR_POSITION - 1 {
-                if enemy.hp > 0 {
-                    kappa.normalAttack()
-                    return
-                }
-            }
-            
             if kappa.pos >= Const.MAX_KAPPA_POSITION {
                 goNextTutorial()
             } else {

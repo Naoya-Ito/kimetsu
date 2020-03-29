@@ -69,7 +69,16 @@ class Tutorial5Scene: BaseScene {
     /************************ 遷移             *****************************************/
     /**************************************************************************/
     private func goNextTutorial(){
-        
+        if onceFlag {
+            return
+        }
+        onceFlag = true
+
+        let nextScene = Tutorial5Scene(fileNamed: "StoryScene")!
+        nextScene.size = self.scene!.size
+        nextScene.scaleMode = SKSceneScaleMode.aspectFit
+        view!.presentScene(nextScene, transition: .doorway(withDuration: 1.3))
+
     }
     
     /***********************************************************************************/
@@ -95,8 +104,10 @@ class Tutorial5Scene: BaseScene {
                     damagedEnemy()
                 case "tornado":
                     damagedEnemy()
-                default:
+                case "beat":
                     break
+                default:
+                    kappa.beDamaged()
                 }
             }
         }
@@ -106,6 +117,9 @@ class Tutorial5Scene: BaseScene {
     /************************ tap             ******************************************/
     /**************************************************************************/
     override func touchDown(atPoint pos : CGPoint) {
+        if kappa.kappaMode == "beat" {
+            return
+        }
         let tapNodes = self.nodes(at: pos)
         for tapNode in tapNodes {
             if let name = tapNode.name {

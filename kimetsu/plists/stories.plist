@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>tutorial</key>
+	<array>
+		<dict>
+			<key>left_image</key>
+			<string></string>
+			<key>right_image</key>
+			<string></string>
+			<key>left_image - 3</key>
+			<string></string>
+		</dict>
+		<dict/>
+	</array>
+</dict>
+</plist>

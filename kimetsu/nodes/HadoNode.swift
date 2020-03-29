@@ -4,7 +4,7 @@ import SpriteKit
 class HadoNode : SKShapeNode {
 
     class func makeHado() -> HadoNode {
-        let hado = HadoNode(circleOfRadius: 20)
+        let hado = HadoNode(circleOfRadius: 10)
         hado.fillColor = .white
         hado.strokeColor = .black
         hado.zPosition = 1
