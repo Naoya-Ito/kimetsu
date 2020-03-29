@@ -86,7 +86,6 @@ class Tutorial3Scene: BaseScene {
         } else if firstBody.categoryBitMask & Const.enemyCategory != 0 {
             if secondBody.categoryBitMask & Const.hadoCategory != 0 {
                 damagedEnemy()
-                secondBody.node?.removeFromParent()
             }
         }
     }

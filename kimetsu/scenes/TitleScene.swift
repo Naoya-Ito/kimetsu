@@ -10,6 +10,7 @@ class TitleScene: BaseScene {
     override func sceneDidLoad() {
         commonSceneDidLoad()
         addSnow()
+        hideReset()
     }
 
     private func addSnow(){
@@ -17,6 +18,13 @@ class TitleScene: BaseScene {
         let node = SnowEmitterNode.makeSnow()
         node.position = CGPoint(x: 0, y: shape.position.y - 100)
         self.addChild(node)
+    }
+    
+    private func hideReset(){
+        if !UserDefaults.standard.bool(forKey: "is_clear_tutorial1") {
+            let shape = self.childNode(withName: "//reset_button") as? SKShapeNode
+            shape?.removeFromParent()
+        }
     }
     
     private func resetConfirm(){

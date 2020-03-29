@@ -7,7 +7,7 @@ class TutorialBossScene: BaseScene {
     private var enemy : EnemyNode = EnemyNode()
     private var door : DoorNode = DoorNode()
     private let ENEMY_POSITION = 4
-    private let DOOR_POSITION = 5
+    private let MAX_POSITION = 6
 
     override func sceneDidLoad() {
         commonSceneDidLoad()
@@ -15,7 +15,6 @@ class TutorialBossScene: BaseScene {
         setWorld()
         addFire()
         addEnemy()
-        addDoor()
     }
     
     private func addFire(){
@@ -34,16 +33,7 @@ class TutorialBossScene: BaseScene {
         enemy.buffaloMove()
         self.addChild(enemy)
     }
-    
-    private func addDoor(){
-        door = DoorNode(imageNamed: "door")
-        door.setPhysic()
-        let pos = CGFloat(DOOR_POSITION)
-        door.position.x = kappa.position.x + (self.size.width)/7.0*pos + Const.ENEMY_SPACE
-        door.position.y = kappa.position.y
-        self.addChild(door)
-    }
-    
+        
     private func shot(){
         let hado = HadoNode.makeHado()
         hado.position = kappa.positionRight()
@@ -111,6 +101,10 @@ class TutorialBossScene: BaseScene {
                     kappa.beDamaged()
                 }
             }
+        } else if firstBody.categoryBitMask & Const.enemyCategory != 0 {
+            if secondBody.categoryBitMask & Const.hadoCategory != 0 {
+                damagedEnemy()
+            }
         }
     }
     
@@ -148,11 +142,9 @@ class TutorialBossScene: BaseScene {
                 kappa.moveLeft()
             }
         } else {
-            if kappa.pos == DOOR_POSITION - 1 {
-                if enemy.hp > 0 {
-                    kappa.normalAttack()
-                    return
-                }
+            if kappa.pos == MAX_POSITION - 1 {
+                kappa.normalAttack()
+                return
             }
             
             if kappa.pos >= Const.MAX_KAPPA_POSITION {

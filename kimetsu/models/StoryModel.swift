@@ -31,21 +31,17 @@ class Story {
     
     public func loadNextPage(){
         page += 1
-        print("now page=\(page)")
         if data_array!.count  <= page {
             print("max_page=\(data_array!.count). now_page=\(page)")
             return
         }
-        
         loadDataByList()
-        print("load comp")
     }
     
     private func loadDataByList(){
-        print("load data. page=\(page)")
         let list = data_array![page] as? NSDictionary
         if list == nil {
-            print("error. story page=\(page) is not exist.")
+            print("Error. story page=\(page) is not exist.")
         }
         right_image   = list!["right_image"] as? String ?? "kappa"
         right_xscale  = list!["right_xscale"] as? CGFloat ?? 1.0
@@ -56,7 +52,5 @@ class Story {
         text2         = list!["text2"] as? String ?? ""
         text3         = list!["text3"] as? String ?? ""
         next_key      = list!["next_key"] as? String ?? ""
-        
-        print("load data by list comp")
     }
 }
