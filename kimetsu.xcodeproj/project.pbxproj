@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -32,6 +32,7 @@
 		CE00A322241E015E00A9DC08 /* spark.sks in Resources */ = {isa = PBXBuildFile; fileRef = CE00A320241E015E00A9DC08 /* spark.sks */; };
 		CE00A325241E018E00A9DC08 /* SparkEmitterNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00A324241E018E00A9DC08 /* SparkEmitterNode.swift */; };
 		CE00A327241E14A700A9DC08 /* WorldNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00A326241E14A700A9DC08 /* WorldNode.swift */; };
+		CE6B7C8024324C670020D4EE /* enemies.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE6B7C7F24324C670020D4EE /* enemies.plist */; };
 		CE7F2420242519C60072C2DD /* Tutorial3Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F241F242519C60072C2DD /* Tutorial3Scene.swift */; };
 		CE7F2422242519EE0072C2DD /* Tutorial3Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = CE7F2421242519EE0072C2DD /* Tutorial3Scene.sks */; };
 		CE7F24252425B0120072C2DD /* snow.sks in Resources */ = {isa = PBXBuildFile; fileRef = CE7F24232425B0120072C2DD /* snow.sks */; };
@@ -83,6 +84,7 @@
 		CE00A320241E015E00A9DC08 /* spark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = spark.sks; sourceTree = "<group>"; };
 		CE00A324241E018E00A9DC08 /* SparkEmitterNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkEmitterNode.swift; sourceTree = "<group>"; };
 		CE00A326241E14A700A9DC08 /* WorldNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldNode.swift; sourceTree = "<group>"; };
+		CE6B7C7F24324C670020D4EE /* enemies.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = enemies.plist; sourceTree = "<group>"; };
 		CE7F241F242519C60072C2DD /* Tutorial3Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial3Scene.swift; sourceTree = "<group>"; };
 		CE7F2421242519EE0072C2DD /* Tutorial3Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tutorial3Scene.sks; sourceTree = "<group>"; };
 		CE7F24232425B0120072C2DD /* snow.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = snow.sks; sourceTree = "<group>"; };
@@ -132,7 +134,6 @@
 				2C6B5EA3605AAF3A35DE5E3A /* Pods-kimetsu.debug.xcconfig */,
 				F53BD7BD6DC47B5170EFE364 /* Pods-kimetsu.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -261,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				CE7F244324279BBF0072C2DD /* stories.plist */,
+				CE6B7C7F24324C670020D4EE /* enemies.plist */,
 			);
 			path = plists;
 			sourceTree = "<group>";
@@ -359,6 +361,7 @@
 				CE00A2F0241D002D00A9DC08 /* LaunchScreen.storyboard in Resources */,
 				CE7F243C2427575D0072C2DD /* Tutorial5Scene.sks in Resources */,
 				CE00A311241DE6B100A9DC08 /* fire.sks in Resources */,
+				CE6B7C8024324C670020D4EE /* enemies.plist in Resources */,
 				CE00A2E4241D002800A9DC08 /* Actions.sks in Resources */,
 				CE00A303241D292100A9DC08 /* TitleScene.sks in Resources */,
 				CE7F244224278EEA0072C2DD /* StoryScene.sks in Resources */,

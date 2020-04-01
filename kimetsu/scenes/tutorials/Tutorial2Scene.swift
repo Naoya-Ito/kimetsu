@@ -4,7 +4,7 @@ import SpriteKit
 import GameplayKit
 class Tutorial2Scene: BaseScene {
     
-    private var enemy : EnemyNode = EnemyNode()
+    private var enemy : EnemyNode = EnemyNode("slime")
     private let ENEMY_POSITION = 4
 
     override func sceneDidLoad() {
@@ -33,8 +33,9 @@ class Tutorial2Scene: BaseScene {
     }
     
     private func addEnemy(){
-        enemy = EnemyNode(imageNamed: "tanuki")
+        enemy = EnemyNode("slime1")
         enemy.setPhysic()
+        enemy.setAnimation()    
         enemy.hp = 20
         let pos = CGFloat(ENEMY_POSITION)
         enemy.position.x = kappa.position.x + (self.size.width)/7.0*pos + Const.ENEMY_SPACE

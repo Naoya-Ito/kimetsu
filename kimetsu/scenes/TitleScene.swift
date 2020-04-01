@@ -16,7 +16,7 @@ class TitleScene: BaseScene {
     private func addSnow(){
         let shape = self.childNode(withName: "//ads") as! SKSpriteNode
         let node = SnowEmitterNode.makeSnow()
-        node.position = CGPoint(x: 0, y: shape.position.y - 100)
+        node.position = CGPoint(x: 0, y: shape.position.y - 50)
         self.addChild(node)
     }
     

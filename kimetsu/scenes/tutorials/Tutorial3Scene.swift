@@ -4,7 +4,7 @@ import SpriteKit
 import GameplayKit
 class Tutorial3Scene: BaseScene {
     
-    private var enemy : EnemyNode = EnemyNode()
+    private var enemy : EnemyNode = EnemyNode("ghost")
     private let ENEMY_POSITION = 4
 
     override func sceneDidLoad() {
@@ -23,7 +23,6 @@ class Tutorial3Scene: BaseScene {
     }
     
     private func addEnemy(){
-        enemy = EnemyNode(imageNamed: "ghost")
         enemy.setPhysic()
         let pos = CGFloat(ENEMY_POSITION)
         enemy.position.x = kappa.position.x + (self.size.width)/7.0*pos + Const.ENEMY_SPACE

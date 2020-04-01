@@ -4,8 +4,7 @@ import SpriteKit
 import GameplayKit
 class TutorialBossScene: BaseScene {
     
-    private var enemy : EnemyNode = EnemyNode()
-    private var door : DoorNode = DoorNode()
+    private var enemy : EnemyNode = EnemyNode("cat")
     private let ENEMY_POSITION = 4
     private let MAX_POSITION = 6
 
@@ -25,7 +24,6 @@ class TutorialBossScene: BaseScene {
     }
     
     private func addEnemy(){
-        enemy = EnemyNode(imageNamed: "cat")
         enemy.setPhysic()
         let pos = CGFloat(ENEMY_POSITION)
         enemy.position.x = kappa.position.x + (self.size.width)/7.0*pos + Const.ENEMY_SPACE
@@ -53,13 +51,14 @@ class TutorialBossScene: BaseScene {
     
     private func beatEnemy(){
         enemy.beatAway()
-        door.fadeAway()
+        
+        _ = CommonUtil.setTimeout(delay: 5.0, block: goNextStory)
     }
     
     /**************************************************************************/
     /************************ 遷移             *****************************************/
     /**************************************************************************/
-    private func goNextTutorial(){
+    private func goNextStory(){
         if onceFlag {
             return
         }
@@ -68,7 +67,7 @@ class TutorialBossScene: BaseScene {
         let nextScene = StoryScene(fileNamed: "StoryScene")!
         nextScene.size = self.scene!.size
         nextScene.scaleMode = SKSceneScaleMode.aspectFit
-        nextScene.key = "tutorial"
+        nextScene.key = "tutorial_clear"
         view!.presentScene(nextScene, transition: .doorway(withDuration: 1.3))
     }
     
@@ -142,13 +141,9 @@ class TutorialBossScene: BaseScene {
                 kappa.moveLeft()
             }
         } else {
-            if kappa.pos == MAX_POSITION - 1 {
+            if kappa.pos >= Const.MAX_KAPPA_POSITION {
                 kappa.normalAttack()
                 return
-            }
-            
-            if kappa.pos >= Const.MAX_KAPPA_POSITION {
-                goNextTutorial()
             } else {
                 kappa.moveRight()
             }

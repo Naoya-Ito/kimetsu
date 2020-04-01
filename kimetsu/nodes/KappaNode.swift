@@ -179,6 +179,7 @@ class KappaNode : SKSpriteNode {
     public func beDamaged(){
         kappaMode = "beat"
         texture = SKTexture(imageNamed: "kappa_beat")
+        xScale = 1.0
         let action = SKAction.sequence([
             SKAction.moveBy(x: -30,  y: 60, duration: 0.7),
             SKAction.moveBy(x: 0,  y: -60, duration:0.3),

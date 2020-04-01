@@ -5,6 +5,32 @@ class EnemyNode : SKSpriteNode {
     
     public var hp = 10
     
+    init(_ key : String, _ lv : Int = 1) {
+        let tmp_texture = SKTexture(imageNamed: key)
+        super.init(texture: tmp_texture, color: .white, size: tmp_texture.size())
+
+        switch key {
+        case "slime":
+            break
+        default:
+            texture = SKTexture(imageNamed: key)
+        }
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    public func setAnimation(){
+        var textures : [SKTexture] = []
+        let atlas = SKTextureAtlas(named: "slime")
+         for i in 1...2 {
+             textures.append(atlas.textureNamed("slime\(i)"))
+         }
+        let animation = SKAction.animate(with: textures, timePerFrame: 0.5)
+        run(SKAction.repeatForever(animation))
+    }
+    
     public func setLight(){
         let light = SKLightNode()
         light.falloff = 1.5
