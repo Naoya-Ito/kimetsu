@@ -20,9 +20,9 @@
 		<key>name</key>
 		<string>ペンギン</string>
 		<key>hp</key>
-		<string>4</string>
+		<string>7</string>
 		<key>str</key>
-		<integer>1</integer>
+		<integer>2</integer>
 	</dict>
 	<key>tanuki</key>
 	<dict>

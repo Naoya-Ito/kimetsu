@@ -37,9 +37,7 @@ class Tutorial2Scene: BaseScene {
         enemy.setPhysic()
         enemy.setAnimation()    
         enemy.hp = 20
-        let pos = CGFloat(ENEMY_POSITION)
-        enemy.position.x = kappa.position.x + (self.size.width)/7.0*pos + Const.ENEMY_SPACE
-        enemy.position.y = kappa.position.y
+        enemy.position = getPosition(ENEMY_POSITION)
         self.addChild(enemy)
     }
     

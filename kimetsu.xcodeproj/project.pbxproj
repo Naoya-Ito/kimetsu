@@ -33,6 +33,9 @@
 		CE00A325241E018E00A9DC08 /* SparkEmitterNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00A324241E018E00A9DC08 /* SparkEmitterNode.swift */; };
 		CE00A327241E14A700A9DC08 /* WorldNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00A326241E14A700A9DC08 /* WorldNode.swift */; };
 		CE6B7C8024324C670020D4EE /* enemies.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE6B7C7F24324C670020D4EE /* enemies.plist */; };
+		CE6B7C8224419FD20020D4EE /* MapScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6B7C8124419FD20020D4EE /* MapScene.swift */; };
+		CE6B7C842441ACFD0020D4EE /* StageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6B7C832441ACFD0020D4EE /* StageModel.swift */; };
+		CE6B7C862441AD6E0020D4EE /* stages.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE6B7C852441AD6E0020D4EE /* stages.plist */; };
 		CE7F2420242519C60072C2DD /* Tutorial3Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F241F242519C60072C2DD /* Tutorial3Scene.swift */; };
 		CE7F2422242519EE0072C2DD /* Tutorial3Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = CE7F2421242519EE0072C2DD /* Tutorial3Scene.sks */; };
 		CE7F24252425B0120072C2DD /* snow.sks in Resources */ = {isa = PBXBuildFile; fileRef = CE7F24232425B0120072C2DD /* snow.sks */; };
@@ -85,6 +88,9 @@
 		CE00A324241E018E00A9DC08 /* SparkEmitterNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkEmitterNode.swift; sourceTree = "<group>"; };
 		CE00A326241E14A700A9DC08 /* WorldNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldNode.swift; sourceTree = "<group>"; };
 		CE6B7C7F24324C670020D4EE /* enemies.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = enemies.plist; sourceTree = "<group>"; };
+		CE6B7C8124419FD20020D4EE /* MapScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScene.swift; sourceTree = "<group>"; };
+		CE6B7C832441ACFD0020D4EE /* StageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageModel.swift; sourceTree = "<group>"; };
+		CE6B7C852441AD6E0020D4EE /* stages.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = stages.plist; sourceTree = "<group>"; };
 		CE7F241F242519C60072C2DD /* Tutorial3Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial3Scene.swift; sourceTree = "<group>"; };
 		CE7F2421242519EE0072C2DD /* Tutorial3Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tutorial3Scene.sks; sourceTree = "<group>"; };
 		CE7F24232425B0120072C2DD /* snow.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = snow.sks; sourceTree = "<group>"; };
@@ -196,6 +202,7 @@
 				CE00A300241D272100A9DC08 /* TitleScene.swift */,
 				CE7F241E242519920072C2DD /* tutorials */,
 				CE00A2E5241D002800A9DC08 /* GameScene.swift */,
+				CE6B7C8124419FD20020D4EE /* MapScene.swift */,
 				CE7F243F24278E860072C2DD /* StoryScene.swift */,
 			);
 			path = scenes;
@@ -262,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				CE7F244324279BBF0072C2DD /* stories.plist */,
+				CE6B7C852441AD6E0020D4EE /* stages.plist */,
 				CE6B7C7F24324C670020D4EE /* enemies.plist */,
 			);
 			path = plists;
@@ -271,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				CE7F2446243049B60072C2DD /* StoryModel.swift */,
+				CE6B7C832441ACFD0020D4EE /* StageModel.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -367,6 +376,7 @@
 				CE7F244224278EEA0072C2DD /* StoryScene.sks in Resources */,
 				CE00A31D241DF37B00A9DC08 /* Tutorial2Scene.sks in Resources */,
 				CE7F242B2425EE2D0072C2DD /* magick.sks in Resources */,
+				CE6B7C862441AD6E0020D4EE /* stages.plist in Resources */,
 				CE00A322241E015E00A9DC08 /* spark.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,6 +437,7 @@
 				CE00A319241DF33B00A9DC08 /* Tutorial2Scene.swift in Sources */,
 				CE7F2447243049B60072C2DD /* StoryModel.swift in Sources */,
 				CE00A307241DD2C600A9DC08 /* KappaNode.swift in Sources */,
+				CE6B7C8224419FD20020D4EE /* MapScene.swift in Sources */,
 				CE7F244A243065710072C2DD /* TutorialBossScene.swift in Sources */,
 				CE00A30D241DDD0900A9DC08 /* CommonUtil.swift in Sources */,
 				CE7F2420242519C60072C2DD /* Tutorial3Scene.swift in Sources */,
@@ -436,6 +447,7 @@
 				CE00A325241E018E00A9DC08 /* SparkEmitterNode.swift in Sources */,
 				CE00A2E0241D002800A9DC08 /* AppDelegate.swift in Sources */,
 				CE7F243E24278DDB0072C2DD /* TutorialLastScene.swift in Sources */,
+				CE6B7C842441ACFD0020D4EE /* StageModel.swift in Sources */,
 				CE7F243A2427543B0072C2DD /* Tutorial5Scene.swift in Sources */,
 				CE7F244024278E860072C2DD /* StoryScene.swift in Sources */,
 				CE7F242E2425EF220072C2DD /* HadoNode.swift in Sources */,

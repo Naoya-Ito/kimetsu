@@ -43,18 +43,7 @@ class TitleScene: BaseScene {
     /**************************************************************************/
     /************************ 遷移             *****************************************/
     /**************************************************************************/
-    private func goGame(){
-        if onceFlag {
-            return
-        }
-        onceFlag = true
 
-        let nextScene = GameScene(fileNamed: "GameScene")!
-        nextScene.size = self.scene!.size
-        nextScene.scaleMode = SKSceneScaleMode.aspectFit
-        view!.presentScene(nextScene, transition: .doorway(withDuration: 1.3))
-    }
-    
     private func goTutorial1(){
         if onceFlag {
             return
@@ -135,8 +124,7 @@ class TitleScene: BaseScene {
                         goTutorial1()
                         return
                     }
-                    
-                    goGame()
+                    goMap()
                     return
                 case "reset_button":
                     resetConfirm()

@@ -86,7 +86,7 @@
 			<key>text3</key>
 			<string></string>
 			<key>next_key</key>
-			<string>tutorial_end</string>
+			<string>tutorial_boss</string>
 		</dict>
 	</array>
 	<key>tutorial_clear</key>
@@ -95,7 +95,7 @@
 			<key>left_image</key>
 			<string>kappa</string>
 			<key>right_image</key>
-			<string>usagi</string>
+			<string>cat</string>
 			<key>talker</key>
 			<string>right</string>
 			<key>text1</key>
@@ -109,7 +109,7 @@
 			<key>left_image</key>
 			<string>kappa</string>
 			<key>right_image</key>
-			<string>usagi</string>
+			<string>cat</string>
 			<key>talker</key>
 			<string>right</string>
 			<key>text1</key>
@@ -123,7 +123,7 @@
 			<key>left_image</key>
 			<string>kappa</string>
 			<key>right_image</key>
-			<string>usagi</string>
+			<string>cat</string>
 			<key>talker</key>
 			<string>right</string>
 			<key>text1</key>

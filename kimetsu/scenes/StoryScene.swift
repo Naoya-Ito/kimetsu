@@ -77,11 +77,14 @@ class StoryScene: BaseScene {
         onceFlag = true
         
         switch story.next_key {
-        case "tutorial_end":
+        case "tutorial_boss":
             let nextScene = TutorialBossScene(fileNamed: "TutorialBossScene")!
             nextScene.size = self.scene!.size
             nextScene.scaleMode = SKSceneScaleMode.aspectFit
             view!.presentScene(nextScene, transition: .fade(with: .black, duration: 0.3))
+        case "tutorial_clear":
+            UserDefaults.standard.set(true, forKey: "is_clear_tutorial")
+            goMap()
         default:
             break
         }
