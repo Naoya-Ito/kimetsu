@@ -24,9 +24,7 @@ class Tutorial3Scene: BaseScene {
     
     private func addEnemy(){
         enemy.setPhysic()
-        let pos = CGFloat(ENEMY_POSITION)
-        enemy.position.x = kappa.position.x + (self.size.width)/7.0*pos + Const.ENEMY_SPACE
-        enemy.position.y = kappa.position.y
+        enemy.position = getPosition(ENEMY_POSITION)
         self.addChild(enemy)
     }
     

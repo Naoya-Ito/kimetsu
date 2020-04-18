@@ -33,9 +33,8 @@ class Tutorial2Scene: BaseScene {
     }
     
     private func addEnemy(){
-        enemy = EnemyNode("slime1")
+        enemy = EnemyNode("slime")
         enemy.setPhysic()
-        enemy.setAnimation()    
         enemy.hp = 20
         enemy.position = getPosition(ENEMY_POSITION)
         self.addChild(enemy)
@@ -49,18 +48,16 @@ class Tutorial2Scene: BaseScene {
             return
         }
         onceFlag = true
-
         UserDefaults.standard.set(true, forKey: "is_clear_tutorial2")
-        
         let nextScene = Tutorial3Scene(fileNamed: "Tutorial3Scene")!
         nextScene.size = self.scene!.size
         nextScene.scaleMode = SKSceneScaleMode.aspectFit
         view!.presentScene(nextScene, transition: .doorway(withDuration: 1.3))
     }
-    
-    /**************************************************************************/
-    /************************ tap             ******************************************/
-    /**************************************************************************/
+
+    /*************************************************************************/
+    /************************ tap             ****************************************/
+    /*************************************************************************/
     override func touchDown(atPoint pos : CGPoint) {
         if pos.x < 0 {
             if kappa.pos <= 0 {
@@ -76,7 +73,6 @@ class Tutorial2Scene: BaseScene {
                     return
                 }
             }
-            
             if kappa.pos >= Const.MAX_KAPPA_POSITION {
                 goNextTutorial()
             } else {

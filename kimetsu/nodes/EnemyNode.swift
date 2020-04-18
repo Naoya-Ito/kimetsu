@@ -4,6 +4,7 @@ import SpriteKit
 class EnemyNode : SKSpriteNode {
     
     public var hp = 10
+    public var pos = 0
     
     init(_ key : String, _ lv : Int = 1) {
         let tmp_texture = SKTexture(imageNamed: key)
@@ -11,21 +12,23 @@ class EnemyNode : SKSpriteNode {
 
         switch key {
         case "slime":
+            setAnimation(key)
             break
         default:
             texture = SKTexture(imageNamed: key)
         }
+        zPosition = 3
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func setAnimation(){
+    public func setAnimation(_ key : String){
         var textures : [SKTexture] = []
-        let atlas = SKTextureAtlas(named: "slime")
+        let atlas = SKTextureAtlas(named: key)
          for i in 1...2 {
-             textures.append(atlas.textureNamed("slime\(i)"))
+             textures.append(atlas.textureNamed("\(key)\(i)"))
          }
         let animation = SKAction.animate(with: textures, timePerFrame: 0.5)
         run(SKAction.repeatForever(animation))

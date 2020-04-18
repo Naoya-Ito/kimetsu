@@ -25,9 +25,10 @@ class MapScene: BaseScene {
         onceFlag = true
 
         let tmp_key = key.split(separator: "-")
+        let stage_key = String(tmp_key[1])
         let nextScene = GameScene(fileNamed: "GameScene")!
         nextScene.size = self.scene!.size
-        nextScene.stage_key = String(tmp_key[1])
+        nextScene.stage_key = stage_key
         nextScene.scaleMode = SKSceneScaleMode.aspectFit
         view!.presentScene(nextScene, transition: .doorway(withDuration: 1.3))
     }

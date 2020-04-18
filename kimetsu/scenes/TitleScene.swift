@@ -35,6 +35,7 @@ class TitleScene: BaseScene {
         alert.addAction(UIAlertAction(title: "覚悟はできてる", style: .default, handler: { action in
             let appDomain = Bundle.main.bundleIdentifier
             UserDefaults.standard.removePersistentDomain(forName: appDomain!)
+            self.reloadScene()
         }))
         alert.addAction(UIAlertAction(title: "やっぱりやめる", style: .cancel))
         self.view?.window?.rootViewController?.present(alert, animated: true, completion: nil)

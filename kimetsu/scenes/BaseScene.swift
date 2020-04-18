@@ -44,7 +44,7 @@ class BaseScene: SKScene, SKPhysicsContactDelegate {
     }
     
     // i 番目の上空にいる座標を取得
-    public func getHightPosition(_ pos : Int) -> CGPoint {
+    public func getHighPosition(_ pos : Int) -> CGPoint {
         let pos_x = Const.KAPPA_START_POSITION_X + (self.size.width)/7.0*CGFloat(pos) + Const.ENEMY_SPACE
         let pos_y = Const.KAPPA_START_POSITION_Y + 220.0
         return CGPoint(x: pos_x, y: pos_y)
