@@ -108,17 +108,41 @@ class GameScene: BaseScene {
             kappa.moveRight()
         }
     }
+
+    /**************************************************************************/
+    /************************ 上スワイプ   ****************************************/
+    /**************************************************************************/
+
+    private func swipeUp(){
+        kappa.jump()
+    }
     
     /**************************************************************************/
     /************************ tap             ******************************************/
     /**************************************************************************/
+    private var beganPos = CGPoint(x: 0, y: 0)
     override func touchDown(atPoint pos : CGPoint) {
+        print("down")
         if pos.x < 0 {
             moveLeft()
         } else {
             moveRight()
         }
         makeHamon(pos)
+        beganPos = pos
+    }
+
+    override func touchUp(atPoint pos : CGPoint) {
+        print("touch up")
+        let diffPos:CGPoint = CGPoint(
+            x:pos.x - beganPos.x,
+            y:pos.y - beganPos.y
+        )
+
+        print("x=\(diffPos.x), y=\(diffPos.y)")
+        if diffPos.y > diffPos.x && diffPos.y >= 50 {
+            swipeUp()
+        }
     }
     
     

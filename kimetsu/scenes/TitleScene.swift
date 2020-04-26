@@ -79,21 +79,11 @@ class TitleScene: BaseScene {
             view!.presentScene(nextScene, transition: .doorway(withDuration: 1.3))
             return
         }
-//        if !UserDefaults.standard.bool(forKey: "is_clear_tutorial5") {
-            let nextScene = Tutorial5Scene(fileNamed: "Tutorial5Scene")!
-            nextScene.size = self.scene!.size
-            nextScene.scaleMode = SKSceneScaleMode.aspectFit
-            view!.presentScene(nextScene, transition: .doorway(withDuration: 1.3))
-            return
-//        }
-        
-        /*
-        let nextScene = StoryScene(fileNamed: "StoryScene")!
+
+        let nextScene = TutorialBossScene(fileNamed: "TutorialBossScene")!
         nextScene.size = self.scene!.size
         nextScene.scaleMode = SKSceneScaleMode.aspectFit
-        nextScene.key = "tutorial"
         view!.presentScene(nextScene, transition: .doorway(withDuration: 1.3))
-*/
     }
     
     private func reloadScene(){

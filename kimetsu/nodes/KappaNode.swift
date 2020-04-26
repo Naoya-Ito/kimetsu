@@ -120,6 +120,17 @@ class KappaNode : SKSpriteNode {
         })
     }
     
+    public func jump(){
+        texture = SKTexture(imageNamed: "kappa_upper")
+
+        let jumpAction = SKAction.sequence([
+            SKAction.moveBy(x: 0, y: 250, duration: 0.25),
+            SKAction.moveBy(x: 0, y: -250, duration:0.25),
+            SKAction.moveBy(x: 0, y: 0,  duration: 0.25),
+            ])
+        jumpAction.timingMode = .linear
+    }
+    
     // 波動の構え
     public func hado(){
         xScale = 1

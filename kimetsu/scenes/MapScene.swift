@@ -65,7 +65,6 @@ class MapScene: BaseScene {
         if (self.lastUpdateTime == 0) {
             self.lastUpdateTime = currentTime
         }
-        let dt = currentTime - self.lastUpdateTime
         self.lastUpdateTime = currentTime
     }
 }
