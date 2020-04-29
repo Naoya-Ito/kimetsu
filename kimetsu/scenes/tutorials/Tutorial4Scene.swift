@@ -118,7 +118,7 @@ class Tutorial4Scene: BaseScene {
                     shot()
                     return
                 case "upper":
-                    kappa.upper()
+//                    kappa.upper()
                     return
                 default:
                     break

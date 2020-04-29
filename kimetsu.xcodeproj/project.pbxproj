@@ -56,6 +56,7 @@
 		CE7F244A243065710072C2DD /* TutorialBossScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F2449243065710072C2DD /* TutorialBossScene.swift */; };
 		CE7F244D243066F70072C2DD /* TutorialBossScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = CE7F244C243066F70072C2DD /* TutorialBossScene.sks */; };
 		CE7F244F2430FCEB0072C2DD /* MapScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = CE7F244E2430FCEB0072C2DD /* MapScene.sks */; };
+		CEF557EC2459DABD00F0348C /* CircleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF557EB2459DABD00F0348C /* CircleNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +112,7 @@
 		CE7F2449243065710072C2DD /* TutorialBossScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialBossScene.swift; sourceTree = "<group>"; };
 		CE7F244C243066F70072C2DD /* TutorialBossScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TutorialBossScene.sks; sourceTree = "<group>"; };
 		CE7F244E2430FCEB0072C2DD /* MapScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MapScene.sks; sourceTree = "<group>"; };
+		CEF557EB2459DABD00F0348C /* CircleNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleNode.swift; sourceTree = "<group>"; };
 		F53BD7BD6DC47B5170EFE364 /* Pods-kimetsu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kimetsu.release.xcconfig"; path = "Target Support Files/Pods-kimetsu/Pods-kimetsu.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -226,6 +228,7 @@
 				CE00A31E241DFD2400A9DC08 /* EnemyNode.swift */,
 				CE7F2437242740010072C2DD /* DoorNode.swift */,
 				CE00A326241E14A700A9DC08 /* WorldNode.swift */,
+				CEF557EB2459DABD00F0348C /* CircleNode.swift */,
 			);
 			path = nodes;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF557EC2459DABD00F0348C /* CircleNode.swift in Sources */,
 				CE7F24302425F2110072C2DD /* HadoEmitterNode.swift in Sources */,
 				CE00A2E6241D002800A9DC08 /* GameScene.swift in Sources */,
 				CE7F243624273C080072C2DD /* Tutorial4Scene.swift in Sources */,

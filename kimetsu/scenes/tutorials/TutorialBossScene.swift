@@ -121,7 +121,7 @@ class TutorialBossScene: BaseScene {
                     shot()
                     return
                 case "upper":
-                    kappa.upper()
+//                    kappa.upper()
                     return
                 case "tornado":
                     kappa.tornado()

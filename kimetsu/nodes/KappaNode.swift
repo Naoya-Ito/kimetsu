@@ -6,6 +6,9 @@ class KappaNode : SKSpriteNode {
     private var isMoving = false
     public var pos = 0
     
+    public var jump_max_count = 2
+    public var jump_count = 2
+    
     public var kappaMode = "normal"
     
     private var moveSpeed : TimeInterval = 0.07
@@ -14,17 +17,19 @@ class KappaNode : SKSpriteNode {
     
     // 物理属性を適用
     public func setPhysic(){
-        let centerPoint = CGPoint(x: 0, y: 64)
+
         let p_size = self.texture!.size()
-        let physic = SKPhysicsBody(rectangleOf: p_size, center: centerPoint)
-        physic.affectedByGravity = false
-        physic.allowsRotation = true
+        let physic = SKPhysicsBody(rectangleOf: p_size)
+//        let centerPoint = CGPoint(x: 0, y: 64)
+//        let physic = SKPhysicsBody(rectangleOf: p_size, center: centerPoint)
+        physic.affectedByGravity = true
+        physic.allowsRotation = false
         physic.isDynamic = true
         physic.categoryBitMask = Const.kappaCategory
         physic.contactTestBitMask = Const.enemyCategory
-        physic.collisionBitMask = 0
+        physic.collisionBitMask = Const.worldCategory
         physic.linearDamping = 0
-        physic.friction = 0
+        physic.friction = 0.8
         physicsBody = physic
     }
 
@@ -119,6 +124,33 @@ class KappaNode : SKSpriteNode {
             self.isMoving = false
         })
     }
+
+    public func stopKappa(){
+        physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+    }
+    
+    public func kappaAction(_ value : CGVector){
+        xScale = (value.dx >= 0) ? 1.0 : -1.0
+
+        // ジャンプ中かどうか
+        
+        if value.dy >= 0 {
+            if value.dy > value.dx {
+                stopKappa()
+                upper(value)
+            } else {
+                stopKappa()
+                kappaKick(value)
+            }
+        } else {
+            
+        }
+        
+        
+        
+    }
+    
+    
     
     public func jump(){
         texture = SKTexture(imageNamed: "kappa_upper")
@@ -129,6 +161,7 @@ class KappaNode : SKSpriteNode {
             SKAction.moveBy(x: 0, y: 0,  duration: 0.25),
             ])
         jumpAction.timingMode = .linear
+        run(jumpAction)
     }
     
     // 波動の構え
@@ -137,25 +170,58 @@ class KappaNode : SKSpriteNode {
         texture = SKTexture(imageNamed: "kappa_punch")
     }
     
-    public func upper(){
-        if isRunnningAction() {
-            return
-        }
-
-        xScale = 1
+    public func upper(_ value: CGVector){
         texture = SKTexture(imageNamed: "kappa_upper")
         kappaMode = "upper"
 
-        let upperAction = SKAction.sequence([
-            SKAction.moveBy(x: 60, y: 250, duration: 0.25),
-            SKAction.moveBy(x: 0,  y: -250, duration:0.25),
-            SKAction.moveBy(x: -60, y: 0,  duration: 0.25),
-            ])
-        spin(8)
-        run(upperAction, completion: {
-            self.kappaMode = "normal"
-        })
+        let MIN_POWER : CGFloat = 200.0
+        let MAX_POWER : CGFloat = 700.0
+        
+        let speed_y : CGFloat
+        if value.dy > MAX_POWER {
+            speed_y = MAX_POWER
+        } else if value.dy > MIN_POWER {
+            speed_y = value.dy
+        } else if value.dy > 0 {
+            speed_y = MIN_POWER
+        } else if value.dy > -MIN_POWER {
+            speed_y = -MIN_POWER
+        } else if value.dy > -MAX_POWER {
+            speed_y = value.dy
+        } else {
+            speed_y = -MAX_POWER
+        }
+
+        let vector = CGVector(dx: value.dx, dy: speed_y)
+        physicsBody?.applyImpulse(vector)
     }
+    
+    public func kappaKick(_ value : CGVector){
+        texture = SKTexture(imageNamed: "kappa_walk")
+        
+        kappaMode = "kick"
+        let MIN_POWER : CGFloat = 200.0
+        let MAX_POWER : CGFloat = 700.0
+
+        let speed_x : CGFloat
+        if value.dx > MAX_POWER {
+            speed_x = MAX_POWER
+        } else if value.dx > MIN_POWER {
+            speed_x = value.dx
+        } else if value.dx > 0 {
+            speed_x = MIN_POWER
+        } else if value.dx > -MIN_POWER {
+            speed_x = -MIN_POWER
+        } else if value.dx > -MAX_POWER {
+            speed_x = value.dx
+        } else {
+            speed_x = -MAX_POWER
+        }
+
+        let vector = CGVector(dx: speed_x, dy: value.dy)
+        physicsBody?.applyImpulse(vector)
+    }
+    
     
     public func tornado(){
         if isRunnningAction() {

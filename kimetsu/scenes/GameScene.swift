@@ -14,6 +14,20 @@ class GameScene: BaseScene {
     override func sceneDidLoad() {
         commonSceneDidLoad()
         setKappa()
+        setWorld()
+        initCircle()
+    }
+    
+    private func initCircle(){
+        self.addChild(circle)
+        
+        var points = [CGPoint(x: 0, y: 0), CGPoint(x: 120,y: 0)]
+        arrow = SKShapeNode(points: &points, count: points.count)
+        arrow.zPosition = 99
+        arrow.strokeColor = .blue
+        arrow.alpha = 0.0
+        arrow.lineWidth = 5
+        self.addChild(arrow)
     }
 
     private var once_load = false
@@ -32,7 +46,8 @@ class GameScene: BaseScene {
     }
     
     private func addEnemy(){
-        for i in 2 ... 5 {
+        return
+        for i in 2 ... 3 {
             let enemy_name = CommonUtil.getRandomByArray(stage.enemies + [""])
             if enemy_name == "" {
                 continue
@@ -45,7 +60,6 @@ class GameScene: BaseScene {
             self.addChild(enemy)
         }
     }
-    
     
     /***********************************************************************************/
     /********************************** 衝突判定 ****************************************/
@@ -85,8 +99,6 @@ class GameScene: BaseScene {
         }
     }
     
-    
-
     /**************************************************************************/
     /************************ 移動            ******************************************/
     /**************************************************************************/
@@ -116,42 +128,85 @@ class GameScene: BaseScene {
     private func swipeUp(){
         kappa.jump()
     }
+
+    
+    /**************************************************************************/
+    /************************ 円マーク      ****************************************/
+    /**************************************************************************/
+    private var circle = CircleNode(fillColor: .clear)
+    private var arrow : SKShapeNode = SKShapeNode()
+    
+    // 直線を描画
+    public func createLine(from: CGPoint, target: CGPoint, color: UIColor = .black){
+        let LENGTH : CGFloat = 2000.0
+        let radian = atan2(target.y - from.y, target.x - from.x)
+        let x = LENGTH*cos(radian)
+        let y = LENGTH*sin(radian)
+        var points = [CGPoint(x: 0, y: 0), CGPoint(x:x,y:y)]
+        let action = SKAction.sequence([
+            SKAction.fadeOut(withDuration: 1.0),
+            SKAction.removeFromParent()
+            ])
+        let shape = SKShapeNode(points: &points, count: points.count)
+        shape.strokeColor = color
+        shape.run(action)
+        shape.position = from
+        self.addChild(shape)
+    }
+    
+    public func hideCircleAndArrow(){
+        circle.fadeOut()
+        let fadeAction = SKAction.fadeOut(withDuration: 0.2)
+        arrow.run(fadeAction)
+    }
     
     /**************************************************************************/
     /************************ tap             ******************************************/
     /**************************************************************************/
     private var beganPos = CGPoint(x: 0, y: 0)
     override func touchDown(atPoint pos : CGPoint) {
-        print("down")
-        if pos.x < 0 {
-            moveLeft()
-        } else {
-            moveRight()
-        }
-        makeHamon(pos)
+        circle.setCircle(pos)
+        arrow.position = pos
         beganPos = pos
+    }
+    
+    override func touchMoved(toPoint pos : CGPoint) {
+        let distance = hypot(pos.x - beganPos.x, pos.y - beganPos.y)
+        var to_scale = distance/100.0
+        if to_scale > 1.0 {
+            to_scale = 1.0
+        }
+        circle.setScale(to_scale)
+        arrow.setScale(to_scale)
+        arrow.alpha = 1.0
+        
+        let radian = atan2(beganPos.y - pos.y, beganPos.x - pos.x)
+        arrow.run(SKAction.rotate(toAngle: radian, duration: 0))
     }
 
     override func touchUp(atPoint pos : CGPoint) {
-        print("touch up")
-        let diffPos:CGPoint = CGPoint(
-            x:pos.x - beganPos.x,
-            y:pos.y - beganPos.y
-        )
-
-        print("x=\(diffPos.x), y=\(diffPos.y)")
-        if diffPos.y > diffPos.x && diffPos.y >= 50 {
-            swipeUp()
-        }
+        let vector = CGVector(dx: 2*(beganPos.x - pos.x), dy: 2*(beganPos.y - pos.y))
+        kappa.kappaAction(vector)
+        
+        hideCircleAndArrow()
     }
     
     
+    /**************************************************************************/
+    /************************ update             ******************************************/
+    /**************************************************************************/
+
     override func update(_ currentTime: TimeInterval) {
         if (self.lastUpdateTime == 0) {
             self.lastUpdateTime = currentTime
         }
         
         let dt = currentTime - self.lastUpdateTime
+        
+        if kappa.physicsBody?.velocity == CGVector(dx:0, dy:0) {
+            kappa.kappaMode = "normal"
+            kappa.texture = SKTexture(imageNamed: "kappa")
+        }
         
         for entity in self.entities {
             entity.update(deltaTime: dt)

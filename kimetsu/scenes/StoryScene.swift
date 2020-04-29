@@ -83,6 +83,7 @@ class StoryScene: BaseScene {
             nextScene.scaleMode = SKSceneScaleMode.aspectFit
             view!.presentScene(nextScene, transition: .fade(with: .black, duration: 0.3))
         case "tutorial_clear":
+            onceFlag = false
             UserDefaults.standard.set(true, forKey: "is_clear_tutorial")
             goMap()
         default:

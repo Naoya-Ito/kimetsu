@@ -33,6 +33,30 @@ class BaseScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.contactDelegate = self
         let underground = childNode(withName: "//underground") as? WorldNode
         underground?.setPhysic()
+
+        let upground = childNode(withName: "//ads") as? WorldNode
+        upground?.setPhysic()
+
+        setRightWall()
+        setLeftWall()
+    }
+    
+    public func setRightWall(){
+        let point : CGPoint = CGPoint(x:frame.maxX, y: frame.midY)
+        let size : CGSize = CGSize(width: 1, height: frame.height)
+        let background = WorldNode(color: .black, size: size)
+        background.position = point
+        background.setPhysic()
+        addChild(background)
+    }
+    
+    public func setLeftWall(){
+        let point : CGPoint = CGPoint(x:frame.minX, y: frame.midY)
+        let size : CGSize = CGSize(width: 1, height: frame.height)
+        let background = WorldNode(color: .black, size: size)
+        background.position = point
+        background.setPhysic()
+        addChild(background)
     }
     
     
