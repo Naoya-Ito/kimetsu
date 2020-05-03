@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E3387533F809D5F2A911AA0 /* Pods_kimetsu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 647B294C7A00C59D6DA6C78D /* Pods_kimetsu.framework */; };
+		69525AA9CDFEF645204A14D6 /* Pods_kimetsu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE46E3E16F6EADB4B4DF9AF7 /* Pods_kimetsu.framework */; };
+		9DD63ED6245E69100067E220 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DD63ED5245E69100067E220 /* Default-568h@2x.png */; };
 		CE00A2E0241D002800A9DC08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00A2DF241D002800A9DC08 /* AppDelegate.swift */; };
 		CE00A2E2241D002800A9DC08 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = CE00A2E1241D002800A9DC08 /* GameScene.sks */; };
 		CE00A2E4241D002800A9DC08 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = CE00A2E3241D002800A9DC08 /* Actions.sks */; };
@@ -60,8 +61,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2C6B5EA3605AAF3A35DE5E3A /* Pods-kimetsu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kimetsu.debug.xcconfig"; path = "Target Support Files/Pods-kimetsu/Pods-kimetsu.debug.xcconfig"; sourceTree = "<group>"; };
-		647B294C7A00C59D6DA6C78D /* Pods_kimetsu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kimetsu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		04DB1626CA11BFA0EFE29AFE /* Pods-kimetsu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kimetsu.release.xcconfig"; path = "Pods/Target Support Files/Pods-kimetsu/Pods-kimetsu.release.xcconfig"; sourceTree = "<group>"; };
+		9DD63ED5245E69100067E220 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		CE00A2DC241D002800A9DC08 /* kimetsu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kimetsu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE00A2DF241D002800A9DC08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE00A2E1241D002800A9DC08 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -113,7 +114,8 @@
 		CE7F244C243066F70072C2DD /* TutorialBossScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TutorialBossScene.sks; sourceTree = "<group>"; };
 		CE7F244E2430FCEB0072C2DD /* MapScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MapScene.sks; sourceTree = "<group>"; };
 		CEF557EB2459DABD00F0348C /* CircleNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleNode.swift; sourceTree = "<group>"; };
-		F53BD7BD6DC47B5170EFE364 /* Pods-kimetsu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kimetsu.release.xcconfig"; path = "Target Support Files/Pods-kimetsu/Pods-kimetsu.release.xcconfig"; sourceTree = "<group>"; };
+		DC24A183A612319279EC31B2 /* Pods-kimetsu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kimetsu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kimetsu/Pods-kimetsu.debug.xcconfig"; sourceTree = "<group>"; };
+		EE46E3E16F6EADB4B4DF9AF7 /* Pods_kimetsu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kimetsu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,37 +123,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E3387533F809D5F2A911AA0 /* Pods_kimetsu.framework in Frameworks */,
+				69525AA9CDFEF645204A14D6 /* Pods_kimetsu.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2EB410A1EDF30D1A3C492A38 /* Frameworks */ = {
+		1540055F81A7E07D13B223B0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				647B294C7A00C59D6DA6C78D /* Pods_kimetsu.framework */,
+				DC24A183A612319279EC31B2 /* Pods-kimetsu.debug.xcconfig */,
+				04DB1626CA11BFA0EFE29AFE /* Pods-kimetsu.release.xcconfig */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5DB9E112449094AC633AB3E7 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				2C6B5EA3605AAF3A35DE5E3A /* Pods-kimetsu.debug.xcconfig */,
-				F53BD7BD6DC47B5170EFE364 /* Pods-kimetsu.release.xcconfig */,
-			);
-			path = Pods;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		CE00A2D3241D002800A9DC08 = {
 			isa = PBXGroup;
 			children = (
+				9DD63ED5245E69100067E220 /* Default-568h@2x.png */,
 				CE00A2DE241D002800A9DC08 /* kimetsu */,
 				CE00A2DD241D002800A9DC08 /* Products */,
-				5DB9E112449094AC633AB3E7 /* Pods */,
-				2EB410A1EDF30D1A3C492A38 /* Frameworks */,
+				ECD97AC04D7270DEAC3FBF40 /* Frameworks */,
+				1540055F81A7E07D13B223B0 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -300,6 +295,14 @@
 			path = tutorials;
 			sourceTree = "<group>";
 		};
+		ECD97AC04D7270DEAC3FBF40 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EE46E3E16F6EADB4B4DF9AF7 /* Pods_kimetsu.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -307,11 +310,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE00A2F4241D002D00A9DC08 /* Build configuration list for PBXNativeTarget "kimetsu" */;
 			buildPhases = (
-				DF9EF385253DD0A84C38F432 /* [CP] Check Pods Manifest.lock */,
+				7D875F3440C0DFC5997273BA /* [CP] Check Pods Manifest.lock */,
 				CE00A2D8241D002800A9DC08 /* Sources */,
 				CE00A2D9241D002800A9DC08 /* Frameworks */,
 				CE00A2DA241D002800A9DC08 /* Resources */,
-				6245937D708D9DEA1E5E394B /* [CP] Embed Pods Frameworks */,
+				2948E416BB42E997EB121801 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -377,6 +380,7 @@
 				CE6B7C8024324C670020D4EE /* enemies.plist in Resources */,
 				CE00A2E4241D002800A9DC08 /* Actions.sks in Resources */,
 				CE00A303241D292100A9DC08 /* TitleScene.sks in Resources */,
+				9DD63ED6245E69100067E220 /* Default-568h@2x.png in Resources */,
 				CE7F244224278EEA0072C2DD /* StoryScene.sks in Resources */,
 				CE00A31D241DF37B00A9DC08 /* Tutorial2Scene.sks in Resources */,
 				CE7F242B2425EE2D0072C2DD /* magick.sks in Resources */,
@@ -388,24 +392,33 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6245937D708D9DEA1E5E394B /* [CP] Embed Pods Frameworks */ = {
+		2948E416BB42E997EB121801 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-kimetsu/Pods-kimetsu-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-kimetsu/Pods-kimetsu-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-kimetsu/Pods-kimetsu-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-kimetsu/Pods-kimetsu-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-kimetsu/Pods-kimetsu-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DF9EF385253DD0A84C38F432 /* [CP] Check Pods Manifest.lock */ = {
+		7D875F3440C0DFC5997273BA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -602,7 +615,7 @@
 		};
 		CE00A2F5241D002D00A9DC08 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C6B5EA3605AAF3A35DE5E3A /* Pods-kimetsu.debug.xcconfig */;
+			baseConfigurationReference = DC24A183A612319279EC31B2 /* Pods-kimetsu.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -621,7 +634,7 @@
 		};
 		CE00A2F6241D002D00A9DC08 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F53BD7BD6DC47B5170EFE364 /* Pods-kimetsu.release.xcconfig */;
+			baseConfigurationReference = 04DB1626CA11BFA0EFE29AFE /* Pods-kimetsu.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
